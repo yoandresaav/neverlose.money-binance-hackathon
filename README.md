@@ -1,12 +1,23 @@
 # Neverlose.money - Gamified HODL Protocol
-A lock-up smart contract HODL protocol on Binance Smart Chain (BSC) that pays bonus to the winners with the losers penalty.
+Neverlose.money is a gamified DeFi protocol on Binance Smart Chain (BSC) that pays a bonus to long-term investors, known as HODLers, using the penalty charge paid by users who fail to HODL.
 
+🌐 Site - http://bsc-testnet.neverlose.money/
+📜 Contract - 
+
+## Why HODL Protocol?
 > "If you aren’t willing to own a stock for ten years, don’t even think about owning it for ten minutes."\
 >\- Warren Buffet -
 
 ![](https://rukminim1.flixcart.com/image/832/832/j6v2ky80/poster/s/r/h/small-warren-buffett-motivational-quotes-value-investing-rule-no-original-imaex8tz68kyz2hf.jpeg)
 
 Source: https://youtu.be/vCpT-UmVf3g
+
+Neverlose.money is designed for crypto investors who want to invest like Warren Buffett. Long-term investment in the crypto market is far more difficult than the stock market as you will have to withstand more ups and downs. We have designed the perfect social HODL protocol on Binance Smart Chain that lets anyone invest in crypto assets like Warren Buffett, the master of value investing. 
+
+## How it works
+1) You can lock-up your crypto for a set duration (from 3 months to 10 years).
+2) While you continue your lock-up, you will get bonuses whenever other users fail to HODL according to their own lock-up terms.
+3) You can withdraw your fund anytime you want, but you will get charged a 10% penalty + a 3% treasury charge if you break the lock-up and withdraw the fund within your lock-up period (the penalty is distributed to others as bonuses).
 
 ## Contracts
 ### LockUpPool.sol
