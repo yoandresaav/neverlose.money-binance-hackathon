@@ -23,7 +23,7 @@ module.exports = async function (deployer, network, [creator]) {
     await wrnToken.addMinter(wrnRewardPool.address, { from: creator });
 
     // Almost No-Limit on lock-up
-    await wrnRewardPool.addLockUpRewardPool(WBNB_ADDRESS, 1, toBN(10000000), false); // ~5% of total BNB = $1.3B
+    await wrnRewardPool.addLockUpRewardPool(WBNB_ADDRESS, 2, toBN(10000000), false); // ~5% of total BNB = $1.3B
     await wrnRewardPool.addLockUpRewardPool(ETH_ADDRESS, 1, toBN(1000000), false); // ~1% of total ETH = $460M
     await wrnRewardPool.addLockUpRewardPool(BTCB_ADDRESS, 1, toBN(100000, 8), false); // ~0.5% of total BTC = $1,622M
 
