@@ -2,7 +2,7 @@
 Neverlose.money is a gamified DeFi protocol on Binance Smart Chain (BSC) that pays a bonus to long-term investors, known as HODLers, using the penalty charge paid by users who fail to HODL.
 
 - 🌐 Site - http://bsc-testnet.neverlose.money/
-- 📜 Contract - [0xBeBa0bD880889570844A6aE756408759BF19e31d](https://testnet.bscscan.com/address/0xBeBa0bD880889570844A6aE756408759BF19e31d)
+- 📜 Contract - [0xB84Accc7376171AA6e9a03Bf1Cc9eb76A889Ce1B](https://testnet.bscscan.com/address/0xB84Accc7376171AA6e9a03Bf1Cc9eb76A889Ce1B)
 
 ## Why HODL Protocol?
 > "If you aren’t willing to own a stock for ten years, don’t even think about owning it for ten minutes."\

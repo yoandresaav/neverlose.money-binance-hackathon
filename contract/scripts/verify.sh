@@ -8,8 +8,8 @@
 truffle run verify WRNRewardPool@0x41b0de019efd5ec9c5393954f66b034e19b63341 --network bsctest
 truffle run verify ERC20Token@0xe888dF124ed4f0087aBE673Be48F538072c48565 --network bsctest
 
-# -> Lock-up Contract: 0xBeBa0bD880889570844A6aE756408759BF19e31d
-# -> WRN: 0x9784dEdfB7d0F7Fbb98FA748B650908220971c4e
+# -> Lock-up Contract: 0xB84Accc7376171AA6e9a03Bf1Cc9eb76A889Ce1B
+# -> WRN: 0xDD42F573125b920b25769B903D4d2C831BD46340
 
 # Step 3: Connect
 # Connect the proxy contract to the implementation contract on Etherscan interface:
