@@ -12,7 +12,7 @@ Neverlose.money is a gamified DeFi protocol on Binance Smart Chain (BSC) that pa
 
 Source: https://youtu.be/vCpT-UmVf3g
 
-Neverlose.money is designed for crypto investors who want to invest like Warren Buffett. Long-term investment in the crypto market is far more difficult than the stock market as you will have to withstand more ups and downs. We have designed the perfect social HODL protocol on Binance Smart Chain that lets anyone invest in crypto assets like Warren Buffett, the master of value investing. 
+Neverlose.money is designed for crypto investors who want to invest like Warren Buffett. Long-term investment in the crypto market is far more difficult than the stock market as you will have to withstand more ups and downs. We have designed the perfect social HODL protocol on Binance Smart Chain that lets anyone invest in crypto assets like Warren Buffett, the master of value investing.
 
 ## How it works
 1) You can lock-up your crypto for a set duration (from 3 months to 10 years).
