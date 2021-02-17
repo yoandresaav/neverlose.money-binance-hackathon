@@ -11,15 +11,14 @@ import checkWhite from "assets/images/check-white.svg";
 import { useRecoilState } from "recoil";
 import { connectWallet } from "atoms";
 import {
-  dcent,
   injected,
   walletlink,
   ledger,
   walletconnect,
+  bsc,
 } from "web3/connectors";
 import { useWeb3React } from "@web3-react/core";
 import useWeb3 from "hooks/useWeb3";
-import { handleErrorMessage } from "utils/errors";
 
 function WalletItem({ className, icon, title, onClick, connected }) {
   return (
@@ -49,22 +48,6 @@ function ConnectWallet(props) {
   const metamaskAvailable =
     window.web3 && window.web3.currentProvider.isMetaMask === true;
 
-  const dcentAvailable =
-    window.ethereum && window.ethereum.isDcentWallet === true;
-
-  async function activateDCENT() {
-    if (!dcentAvailable) {
-      window.open("https://dcentwallet.com/features/neverlose-money", "_blank");
-      return;
-    }
-
-    try {
-      await activate(dcent);
-    } catch (e) {
-      handleErrorMessage(e);
-    }
-  }
-
   useEffect(() => {
     if (account) {
       setVisible(false);
@@ -82,9 +65,11 @@ function ConnectWallet(props) {
               icon={bWallet}
               title={"Binance Chain Wallet"}
               onClick={() => {
-                activateDCENT();
+                metamaskAvailable
+                  ? activate(bsc)
+                  : window.open("https://www.binance.org/en/smartChain", "_blank");
               }}
-              connected={connected && connector === dcent}
+              connected={connected && connector === bsc}
             />
             <WalletItem
               className="top-15"

@@ -4,6 +4,7 @@
   "version": "1.10.2",
   "private": true,
   "dependencies": {
+    "@binance-chain/bsc-connector": "^1.0.0",
     "@bugsnag/js": "^7.5.4",
     "@bugsnag/plugin-react": "^7.5.4",
     "@ethersproject/constants": "^5.0.5",
