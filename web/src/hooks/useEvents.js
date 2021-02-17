@@ -29,7 +29,7 @@ function useEvents(symbol) {
   const [events, setEvents] = useState(null);
   const [lastUpdateTimestamp, setLastUpdateTimestamp] = useState(null);
   const { account } = useWeb3React();
-  const chainId = 1;
+  const chainId = 97;
 
   const ethersProvider = getEthersProvider(chainId);
   async function update() {

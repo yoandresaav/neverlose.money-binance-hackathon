@@ -11,7 +11,7 @@ import BigNumber from "bignumber.js";
 import { ALCHEMY_API_KEY } from "web3/connectors";
 
 function useExplorerOverview() {
-  const chainId = 1;
+  const chainId = 97;
   const [chainData, setChainData] = useState(null);
   const [renderData, setRenderData] = useState([]);
   const { type, timestamp } = useRecoilValue(txTimestampAtom);

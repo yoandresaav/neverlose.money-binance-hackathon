@@ -18,7 +18,7 @@ import { BIPS_BASE } from "hooks/useSwap";
 import { handleErrorMessage } from "utils/errors";
 
 function useWRNPrice(props) {
-  const chainId = 1;
+  const chainId = 97;
   const out = useRef(null);
   const { WETH: ETH } = global.tokenPrices || {};
   const [price, setPrice] = useState(null);
@@ -73,7 +73,7 @@ function useWRNPrice(props) {
     }
 
     if (ETH) {
-      update();
+      // update();
     }
   }, [ETH]);
 

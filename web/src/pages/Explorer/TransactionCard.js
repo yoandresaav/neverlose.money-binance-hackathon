@@ -34,7 +34,7 @@ function TransactionCard(props) {
     event,
     returnValues,
     transactionHash,
-    chainId = 1,
+    chainId = 97,
   } = props;
 
   const memoized = useMemo(() => {

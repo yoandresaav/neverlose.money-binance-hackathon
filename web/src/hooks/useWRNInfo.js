@@ -7,7 +7,7 @@ import BigNumber from "bignumber.js";
 import { handleErrorMessage } from "utils/errors";
 
 function useWRNInfo(props) {
-  const chainId = 1;
+  const chainId = 97;
   const [data, setData] = useState({});
   const WRNPrice = global.WRNPrice;
   const { lastUpdateTimestamp } = global.events;
