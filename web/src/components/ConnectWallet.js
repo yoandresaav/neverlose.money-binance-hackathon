@@ -65,9 +65,15 @@ function ConnectWallet(props) {
               icon={bWallet}
               title={"Binance Chain Wallet"}
               onClick={() => {
-                metamaskAvailable
-                  ? activate(bsc)
-                  : window.open("https://www.binance.org/en/smartChain", "_blank");
+                if (metamaskAvailable) {
+                  window.localStorage.setItem("lastInjector", "bsc");
+                  activate(bsc);
+                } else {
+                  window.open(
+                    "https://www.binance.org/en/smartChain",
+                    "_blank"
+                  );
+                }
               }}
               connected={connected && connector === bsc}
             />
@@ -76,9 +82,12 @@ function ConnectWallet(props) {
               icon={metamaskLogo}
               title={metamaskAvailable ? "Metamask" : "Install Metamask"}
               onClick={() => {
-                metamaskAvailable
-                  ? activate(injected)
-                  : window.open("https://metamask.io/", "_blank");
+                if (metamaskAvailable) {
+                  window.localStorage.setItem("lastInjector", "metamask");
+                  activate(bsc);
+                } else {
+                  window.open("https://metamask.io/", "_blank");
+                }
               }}
               connected={connected && connector === injected}
             />

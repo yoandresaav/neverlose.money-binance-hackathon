@@ -49,11 +49,13 @@ function useWeb3(props) {
 
   //try to connect if already authorized
   useEffect(() => {
-    injected.isAuthorized().then((isAuthorized) => {
-      if (isAuthorized) {
-        activateInjector(injected, true);
-      }
-    });
+    if (window.localStorage.getItem("lastInjector") === "metamask") {
+      injected.isAuthorized().then((isAuthorized) => {
+        if (isAuthorized) {
+          activateInjector(injected, true);
+        }
+      });
+    }
   }, []); //eslint-disable-line
 
   return [
