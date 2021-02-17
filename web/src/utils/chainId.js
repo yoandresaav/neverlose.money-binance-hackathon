@@ -8,5 +8,5 @@ export function allowedChainId(id) {
   // return process.env.NODE_ENV === "production"
   //   ? [CHAINID_MAINNET].includes(id)
   //   : [CHAINID_MAINNET].includes(id);
-  return [CHAIN_ID_BSC_MAIN, CHAIN_ID_BSC_TESTNET].includes(id);
+  return [CHAIN_ID_BSC_TESTNET].includes(id);
 }
