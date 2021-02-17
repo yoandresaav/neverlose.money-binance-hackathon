@@ -1,0 +1,29 @@
+.hodl-modal {
+  background-color: #030304;
+
+  @include responsive(mobile) {
+    margin: 1rem 0;
+  }
+
+  .coin-img {
+    width: auto;
+    height: 44px;
+  }
+
+  canvas {
+    background-color: #030304;
+  }
+
+  .hide-balance {
+    padding: 2px 6px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.45);
+  }
+
+  .nvlm-logo {
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 1px solid $primary;
+    border-radius: 100%;
+  }
+}

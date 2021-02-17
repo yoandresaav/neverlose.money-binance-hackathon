@@ -1,0 +1,81 @@
+// https://fkhadra.github.io/react-toastify/how-to-style
+/** Used to define container behavior: width, position: fixed etc... **/
+.Toastify__toast-container {
+  width: 390px;
+
+    @media only screen and (max-width: 600px) {
+    width: calc(100% - 40px);
+    top: 20px;
+    left: 20px;
+  }
+}
+
+/** Classes for the displayed toast **/
+.Toastify__toast {
+  display: flex;
+  background: #fff;
+  color: #6d7278;
+  border-radius: 18px;
+  padding: 0 25px;
+  box-shadow: 0 24px 32px 0 rgba(0, 0, 0, 0.04),
+    0 16px 24px 0 rgba(0, 0, 0, 0.04), 0 4px 8px 0 rgba(0, 0, 0, 0.04),
+    0 0 1px 0 rgba(0, 0, 0, 0.04);
+
+  &:before {
+    display: flex;
+    margin-right: 25px;
+    align-self: center;
+  }
+}
+.Toastify__toast--dark {
+  background: #464646;
+  color: #a8acb0;
+  &:before {
+    content: url("../../assets/images/toast-action.svg");
+  }
+}
+.Toastify__toast--info {
+  &:before {
+    content: url("../../assets/images/toast-info.svg");
+  }
+}
+.Toastify__toast--success {
+  &:before {
+    content: url("../../assets/images/toast-success.svg");
+  }
+}
+.Toastify__toast--warning {
+  &:before {
+    content: url("../../assets/images/toast-warn.svg");
+  }
+}
+.Toastify__toast--error {
+  &:before {
+    content: url("../../assets/images/toast-error.svg");
+  }
+}
+.Toastify__toast-body {
+  width: 100%;
+  margin-right: 32px;
+  padding: 20px 0;
+}
+
+/** Classes for the close button. Better use your own closeButton **/
+.Toastify__close-button {
+  position: absolute;
+  min-width: 20px;
+  right: 10px;
+  top: 10px;
+}
+.Toastify__close-button--default {
+}
+.Toastify__close-button > svg {
+  fill: #a8acb0;
+  width: 22px;
+  height: 22px;
+}
+
+/** Classes for the progress bar **/
+.Toastify__progress-bar {
+  height: 0;
+}

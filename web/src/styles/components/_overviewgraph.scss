@@ -1,0 +1,13 @@
+.overview-graph {
+  .graph-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+  }
+  .bar {
+    max-width: 150px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: $primary;
+  }
+}

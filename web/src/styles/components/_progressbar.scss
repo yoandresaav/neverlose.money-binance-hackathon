@@ -1,0 +1,17 @@
+.progress-bar {
+  position: relative;
+  background-color: #a8acb0;
+  width: 100%;
+
+  .filled {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    background: $primary;
+    -webkit-transition: width 1.5s ease-in-out; /* Safari */
+    transition: width 1.5s ease-in-out;
+  }
+}

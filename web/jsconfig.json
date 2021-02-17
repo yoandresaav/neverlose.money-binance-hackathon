@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+      "target": "ES6",
+      "baseUrl": "./src"
+  },
+  "exclude": [
+      "**/build/**",
+      "node_modules",
+      "**/node_modules/*"
+  ]
+}

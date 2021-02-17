@@ -1,0 +1,127 @@
+html {
+  font-family: "Roboto Slab", sans-serif;
+  font-weight: 400;
+  line-height: 1.34;
+
+  @include responsive(mobile) {
+    font-size: 12px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, p, span, b, strong {
+  margin: 0;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 3.125rem; //50px;
+}
+
+h2 {
+  font-size: 2.125rem; //34px;
+}
+
+h3 {
+  font-size: 1.5rem; //24px;
+}
+
+h4 {
+  font-size: 1.375rem; //22px;
+}
+
+h5 {
+  font-size: 1.25rem; //20px;
+}
+
+h6 {
+  font-size: 1.125rem; //18px;
+}
+
+p {
+  font-size: 0.875rem; //14px;
+}
+
+b {
+  font-weight: 500;
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+}
+
+small {
+  font-size: 0.75rem;
+}
+
+.bold, .bold * {
+  font-weight: 500 !important;
+}
+
+.primary {
+  color: $primary;
+}
+
+.secondary {
+  color: $secondary;
+}
+
+.black {
+  color: black;
+}
+
+.grey {
+  color: $text-grey;
+}
+
+.light-grey {
+  color: $text-light-grey;
+}
+
+.lighter-grey {
+  color: #a8acb0;
+}
+
+.green {
+  color: #05b169;
+}
+
+.red {
+  color: #e02020;
+}
+
+.white {
+  color: #fff;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.break-all {
+  word-break: break-all;
+}
+
+.break-word {
+  word-break: break-word;
+}

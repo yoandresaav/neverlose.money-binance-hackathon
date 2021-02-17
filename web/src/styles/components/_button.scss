@@ -1,0 +1,56 @@
+button {
+  cursor: pointer;
+  min-width: 80px;
+  height: 30px;
+  font-size: 0.875rem;
+  background-color: $primary;
+  color: #000;
+  transition: transform 100ms ease-in-out;
+  border: none;
+
+  &:hover {
+    transform: scale(1.01);
+  }
+
+  &.inverse {
+    border: solid 1px $primary;
+    color: $primary;
+    background-color: transparent;
+  }
+
+  &.success {
+    border: solid 1px #05b169;
+    color: #05b169;
+    background-color: transparent;
+    &.inverse {
+      background-color: #05b169;
+      color: white;
+    }
+  }
+
+  &.warning {
+    color: #e02020;
+    border: solid 1px #e02020;
+    background-color: transparent;
+    &.inverse {
+      background-color: #e02020;
+      color: white;
+    }
+  }
+
+  &.big {
+    height: 3rem;
+    font-size: 1.125rem;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+button[disabled] {
+  cursor: disabled;
+  opacity: 0.5;
+  transition: none;
+}
+

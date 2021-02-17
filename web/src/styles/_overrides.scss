@@ -1,0 +1,10 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+hr {
+  margin: 15px 0;
+  border: solid 1px #f0f0f0;
+}

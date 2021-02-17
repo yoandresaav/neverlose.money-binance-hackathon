@@ -1,0 +1,341 @@
+.page-explorer {
+  background-color: #f2f2f2;
+  overflow-x: hidden;
+
+  .calculator-modal {
+    hr {
+      margin: 40px 0 20px;
+    }
+
+    .bonus-summary {
+      border: solid 1px #05b169;
+      background-color: #ecfbf5;
+      padding: 20px;
+    }
+
+    .amount-input {
+      width: 188px;
+      height: 40px;
+      padding: 10px 15px;
+      font-size: 0.875rem;
+      border: 1px solid #000;
+
+      input {
+        width: 80%;
+        border: none;
+        outline: none;
+      }
+    }
+  }
+
+  .main-banner {
+    padding: 140px 0 80px;
+
+    .banner-bg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 0;
+    }
+
+    .banner-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .main-banner-coin {
+      width: 72px;
+      height: 72px;
+    }
+
+    button {
+      width: 150px;
+      height: 40px;
+
+      &.black-bg {
+        border: solid 1px #fff;
+        background-color: #000;
+      }
+    }
+
+    canvas {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    svg {
+      width: 100px;
+      height: 100px;
+    }
+
+    #coin-path {
+      transition: all 2s cubic-bezier(0.66, 0.04, 0.26, 0.91);
+    }
+  }
+
+  .content {
+    padding-top: 40px; // +20px on header
+    padding-bottom: 120px;
+
+    .stat-card {
+      width: 346px;
+      max-width: 100%;
+      background-color: #373737;
+      padding: 2.5rem;
+
+      &.small {
+        padding: 1.375rem 2.5rem;
+      }
+
+      .grey {
+        color: #a8acb0;
+      }
+
+      .title {
+        font-size: 2rem;
+        margin-top: 3px;
+      }
+
+      .active-cumulative {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+      }
+
+      @media only screen and (max-width: 750px) {
+        width: calc(100vw - 2.5rem);
+      }
+    }
+
+    .hodl-index {
+      position: relative;
+      padding: 0;
+
+      .question-grey {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 15px;
+        right: 15px;
+      }
+
+      .outer-circle {
+        position: relative;
+        width: 230px;
+        height: 230px;
+        border: dashed 1px rgba(240, 185, 11, 0.15);
+        border-radius: 100%;
+        padding: 20px;
+
+        @keyframes rotate {
+          0% {
+            transform: rotate(0deg);
+          }
+
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+
+        @keyframes rotateCounter {
+          0% {
+            transform: rotate(360deg);
+          }
+
+          100% {
+            transform: rotate(0deg);
+          }
+        }
+
+        .rotate {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+          animation: rotate 20s infinite linear;
+        }
+
+        .middle-circle,
+        .inner-circle {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          border-radius: 100%;
+          padding: 20px;
+          border: dashed 1px rgba(240, 185, 11, 0.45);
+
+          .inner-circle {
+            border-color: $primary;
+          }
+        }
+
+        .coin-symbol {
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          top: -10px;
+          left: calc(50% - 5px);
+          animation: rotateCounter 20s infinite linear;
+
+          &.eth {
+            top: calc(100% - 45px);
+            left: 0;
+          }
+
+          &.btc {
+            top: calc(100% - 35px);
+            left: calc(100% - 25px);
+          }
+
+          .percentage {
+            position: absolute;
+            top: 24px;
+            left: -25%;
+          }
+        }
+      }
+    }
+
+    .latest-transactions {
+      .transaction-card {
+        position: relative;
+        width: 208px;
+        height: 208px;
+        padding: 1.25rem;
+        padding-top: 3.875rem;
+        border: solid 2px #f0b90b;
+        background-color: #f1ecdf;
+        text-decoration: none;
+        transition: all 150ms ease-in-out;
+
+        &:hover {
+          transform: scale(1.01);
+        }
+
+        .token-icon {
+          position: absolute;
+          width: 24px;
+          height: 24px;
+          top: 20px;
+          right: 20px;
+          object-fit: contain;
+        }
+
+        .broken-banner {
+          position: absolute;
+          padding: 0.8125rem 1.25rem;
+          bottom: 0;
+          left: 0;
+          background-color: #e02020;
+        }
+
+        &.broken {
+          border-color: #e02020;
+          background-color: #fff2f2;
+        }
+
+        &.claimed {
+          border-color: #05b169;
+          background-color: #ecfbf5;
+        }
+
+        @media only screen and (max-width: 480px) {
+          width: 100%;
+          height: auto;
+          padding: 1.25rem;
+
+          &.broken {
+            padding-bottom: 5rem;
+          }
+        }
+      }
+
+      .transaction-card-empty {
+        width: 208px;
+      }
+
+      .card-enter {
+        opacity: 0;
+      }
+
+      .card-entered {
+        opacity: 1;
+        transition: opacity 1s ease-in;
+      }
+
+      .card-exit {
+        opacity: 1;
+      }
+
+      .card-exit-active {
+        opacity: 0;
+        transition: opacity 500ms ease-in;
+      }
+    }
+
+    .wrn-banner {
+      position: relative;
+      padding: 2.5rem;
+      background-color: #373737;
+
+      .wrn-logo {
+        width: 47px;
+        height: 47px;
+      }
+
+      .caret-right {
+        width: auto;
+        height: 0.625rem;
+        padding-top: 1px;
+      }
+
+      .grey-icon {
+        width: auto;
+        height: 12px;
+      }
+
+      .wrn-data {
+        position: relative;
+        width: 490px;
+        max-width: calc(100vw - 2.5rem);
+        .data-item-margin {
+          width: 33.33%;
+        }
+      }
+
+      @media only screen and (max-width: 1000px) {
+        flex-direction: column;
+        margin-top: 1.25rem;
+
+        .logo-container {
+          flex-direction: column;
+
+          .wrn-info {
+            margin-top: 20px;
+          }
+        }
+
+        .wrn-data {
+          width: 100%;
+          margin-top: 2.5rem;
+
+          .progress-bar {
+            margin-top: 20px;
+          }
+        }
+      }
+
+      @media only screen and (max-width: 400px) {
+        .wrn-address {
+          width: 150px;
+        }
+      }
+    }
+  }
+}

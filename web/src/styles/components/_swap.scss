@@ -1,0 +1,138 @@
+.swap-interface {
+  position: relative;
+  background-color: #373737;
+  padding: 2.5rem;
+  transition: all 150ms ease-in-out;
+
+  .collapsed-title {
+    padding-right: 20px;
+  }
+
+  .description-box {
+    min-width: 354px;
+    max-width: 100%;
+  }
+
+  .swap-widget {
+    width: 460px;
+    height: 90px;
+    padding: 1.25rem 1.5625rem;
+    border-radius: 15px;
+    border: solid 1px #6d7278;
+    background-color: #000000;
+    overflow: hidden;
+
+    .question-grey {
+      width: 12px;
+    }
+
+    .approve-overlay {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      z-index: 1;
+      padding: 2.5rem;
+
+      .approve-text {
+        text-align: center;
+        margin-right: 40px;
+      }
+    }
+
+    .input-container {
+      .input-box {
+        max-width: 120px;
+        border-bottom: solid 2px #6d7278;
+        padding-bottom: 5px;
+      }
+
+      .number-input {
+        width: 70px;
+        background-color: #000;
+        color: #fff;
+        outline: none;
+        border: none;
+        padding-right: 10px;
+      }
+    }
+  }
+
+  .swap-hide {
+    position: absolute;
+    width: 1.5rem;
+    height: auto;
+    top: 0.9375rem;
+    right: 0.9375rem;
+    overflow: visible;
+    transition: all 150ms ease-in-out;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  button {
+    position: relative;
+    z-index: 2;
+    min-width: 85px;
+    height: 34px;
+    font-size: 1rem;
+    border-radius: 9px;
+  }
+
+  @media only screen and (max-width: 1034px) {
+    flex-direction: column;
+    .description-box {
+      min-width: auto;
+    }
+    .left-20 {
+      margin-left: 0;
+    }
+  }
+
+  @media only screen and (max-width: 630px) {
+    .swap-widget {
+      width: 100%;
+      height: 260px;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .input-container {
+        width: 100%;
+
+        .input-box {
+          display: flex;
+          align-items: justify-between;
+          width: 100%;
+          max-width: 100%;
+        }
+
+        .number-input {
+          flex-grow: 1;
+        }
+      }
+
+      .approve-overlay {
+        align-items: center;
+        justify-content: center;
+
+        .approve-text {
+          width: 100%;
+          margin: -34px 0 0 0; // adjust button height
+        }
+      }
+
+      .right-arrow {
+        transform: rotate(90deg);
+      }
+
+      button {
+        align-self: center;
+      }
+    }
+  }
+}

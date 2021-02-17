@@ -1,0 +1,31 @@
+.component-dropdown {
+  width: 188px;
+  height: 40px;
+
+  .coin-img {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 15px;
+    top: 12px;
+  }
+
+  select {
+    width: 100%;
+    height: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 0.875rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: "";
+    background-color: transparent;
+  }
+
+  img {
+    position: absolute;
+    right: 15px;
+    top: 17px;
+  }
+}

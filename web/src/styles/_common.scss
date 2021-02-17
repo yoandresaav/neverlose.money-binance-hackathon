@@ -1,0 +1,101 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  height: 100%;
+  overflow: hidden;
+}
+
+#app {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+}
+
+* {
+  flex-shrink: 0;
+}
+
+.link {
+  cursor: pointer;
+}
+
+@for $i from 1 through 20 {
+  .top-#{$i * 5} {
+    margin-top: #{$i * 0.3}rem;
+  }
+
+  .right-#{$i * 5} {
+    margin-right: #{$i * 0.3}rem;
+  }
+
+  .bottom-#{$i * 5} {
+    margin-bottom: #{$i * 0.3}rem;
+  }
+
+  .left-#{$i * 5} {
+    margin-left: #{$i * 0.3}rem;
+  }
+
+  .font-#{$i * 2} {
+    font-size: #{$i * 0.125}rem;
+  }
+}
+
+.font-11 {
+  font-size: 0.6875rem;
+}
+
+.max-width {
+  width: 100%;
+}
+
+.cap-max-width {
+  max-width: 100%;
+}
+
+.max-height {
+  height: 100%;
+}
+
+.padded-top {
+  padding-top: 40px;
+}
+
+.relative {
+  position: relative;
+}
+
+.padded-horizontal {
+  padding-left: calc((100% - 1120px) / 2);
+  padding-right: calc((100% - 1120px) / 2);
+
+  @media only screen and (max-width: 1140px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.overflow-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bordered {
+  border: solid 1px #dedede;
+}
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}

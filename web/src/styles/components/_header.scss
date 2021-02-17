@@ -1,0 +1,118 @@
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent !important;
+  z-index: $header-zindex;
+  width: 100%;
+
+  .header-padding {
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+
+  .logo {
+    width: auto;
+    height: 30px;
+  }
+
+  .header-right {
+    width: 122px;
+    text-align: right;
+  }
+
+  .header-link {
+    cursor: pointer;
+    margin: 0 15px;
+    color: #828589;
+    text-decoration: none;
+    font-size: 0.875rem;
+
+    &.active {
+      color: $primary;
+    }
+  }
+
+  .metamask-container {
+    padding: 0.4em 0.8em;
+    background-color: #dedede;
+  }
+
+  @media only screen and (max-width: 640px) {
+    .header-content {
+      display: none !important;
+    }
+
+    .header-padding {
+      padding-top: 1.25rem;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.mobile-header {
+  display: none;
+  position: relative;
+
+  .logo-container {
+    position: relative;
+    z-index: 5;
+    .logo {
+      width: auto;
+      height: 42px;
+    }
+  }
+
+  .mobile-menu {
+    position: absolute;
+    width: 100vw;
+    left: -20px;
+    top: 0;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    z-index: 4;
+    opacity: 0;
+    transition: all 250ms ease-in-out;
+
+    &.visible {
+      top: calc(100% + 30px);
+      opacity: 1;
+    }
+
+    h6 {
+      font-size: 16px !important;
+    }
+
+    .header-link {
+      margin: 0;
+      color: #6d7278;
+      margin-bottom: 1em;
+
+      &.active {
+        color: $primary;
+      }
+    }
+
+    .metamask-container {
+      background-color: #373737;
+
+      p {
+        font-size: 14px;
+      }
+    }
+
+    button {
+      font-size: 14px;
+      padding: 0.8em 1.6em;
+      height: auto;
+      border: solid 1px #f0b90b;
+      color: #f0b90b;
+      background-color: #030304;
+      transition: all 250ms ease-in-out;
+    }
+  }
+
+  @media only screen and (max-width: 640px) {
+    display: block !important;
+  }
+}

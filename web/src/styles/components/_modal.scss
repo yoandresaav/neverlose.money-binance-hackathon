@@ -1,0 +1,24 @@
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: $modal-zindex;
+  overflow-y: scroll;
+  background-color: rgba(0, 0, 0, 0.65);
+
+  .modal-content {
+    position: relative;
+    width: 480px;
+    max-width: 100vw;
+    padding: 2.5rem;
+    background-color: #ffffff;
+
+    .close-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  }
+}

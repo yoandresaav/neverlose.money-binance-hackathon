@@ -1,0 +1,572 @@
+.page-dashboard {
+  padding-top: 160px; // +20px on header
+  padding-bottom: 140px;
+  background-color: #f2f2f2;
+  overflow-x: hidden;
+
+  .hodl-modal {
+    background-color: #030304;
+
+    .coin-img {
+      width: auto;
+      height: 44px;
+    }
+
+    canvas {
+      background-color: #030304;
+    }
+  }
+
+  .how-it-works {
+    position: relative;
+    padding: 0 2.5rem 2.5rem 2.5rem;
+    background-color: #fff;
+
+    .close-button {
+      cursor: pointer;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .left-col {
+      width: 250px;
+    }
+
+    .right-col {
+      .arrow-left {
+        margin-left: 16px;
+      }
+
+      .text-block {
+        width: 220px;
+
+        &.with-arrow {
+          margin-right: 20px;
+        }
+      }
+    }
+
+    .right-col-mobile {
+      position: relative;
+      width: 100%;
+      display: none;
+
+      .arrow-down-right {
+        transform: scaleX(-1);
+      }
+
+      .two-col-container {
+        position: relative;
+
+        .text-block {
+          width: 50%;
+        }
+      }
+    }
+
+    @media only screen and (max-width: 790px) {
+      .right-col {
+        display: none;
+      }
+
+      .right-col-mobile {
+        display: block;
+      }
+    }
+  }
+
+  .investment-overview {
+    .stat-card {
+      width: 540px;
+      height: 248px;
+      background-color: #373737;
+      padding: 2.5rem;
+
+      hr {
+        margin: 20px 0;
+        width: 50px;
+        border-color: #464646;
+      }
+
+      img {
+        width: 2.8125rem;
+        height: 2.8125rem;
+      }
+
+      .data {
+        font-size: 2rem;
+      }
+
+      &.small {
+        height: 114px;
+        padding: 1.375rem 2.5rem;
+      }
+
+      @media only screen and (max-width: 1140px) {
+        width: calc(100vw - 40px);
+      }
+
+      @include responsive(mobile) {
+        height: auto;
+      }
+    }
+  }
+
+  .history {
+    position: relative;
+
+    .tab-header {
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+
+      .pending-transactions {
+        position: absolute;
+        right: 0;
+        bottom: 15px;
+        z-index: 9999;
+
+        @media only screen and (max-width: 620px) {
+          // display: none;
+          bottom: 70px;
+        }
+
+        @include responsive(mobile) {
+          bottom: 65px;
+        }
+      }
+
+      .loading {
+        @keyframes loading {
+          from {
+            transform: rotate(0deg);
+          }
+
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        animation: loading 1s linear infinite;
+      }
+
+      .transactions-popup {
+        position: absolute;
+        width: 256px;
+        top: calc(100% + 15px);
+        right: 0px;
+        padding: 10px 0;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+        background-color: #ffffff;
+        z-index: 2;
+        line-height: 2;
+
+        .line {
+          width: 100%;
+          height: 1px;
+          margin: 4px 0 8px;
+          background-color: rgba(0, 0, 0, 0.09);
+        }
+      }
+
+      .popup-triangle {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 20px;
+        width: 20px;
+        transform: rotate(45deg);
+        height: 20px;
+        background-color: #ffffff;
+        z-index: 3;
+      }
+    }
+
+    .tab-selected {
+      cursor: pointer;
+      position: relative;
+      height: 54px;
+      z-index: 1;
+    }
+
+    .history-tab {
+      position: relative;
+      width: 148px;
+      max-width: 33%;
+      height: 54px;
+      z-index: 2;
+    }
+
+    .tab-selected {
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: #fff;
+      z-index: 0;
+      transition: left 150ms ease-in-out;
+    }
+
+    .tab-content {
+      padding: 0px 2.5rem 2.5rem 2.5rem;
+      background-color: #fff;
+
+      .why-wbtc,
+      .why-weth {
+        @media only screen and (max-width: 892px) {
+          flex-direction: column-reverse;
+          align-items: flex-start;
+          .left-60 {
+            margin-left: 0;
+          }
+
+          .diagram {
+            max-width: 100%;
+          }
+
+          button {
+            margin-top: 20px;
+          }
+        }
+      }
+
+      .why-hunt,
+      .why-weth {
+        position: relative;
+        padding: 2.5rem;
+        border: solid 1px #05b169;
+        background-color: #ecfbf5;
+
+        .close-button {
+          position: absolute;
+          right: 20px;
+          top: 20px;
+        }
+      }
+
+      .why-hunt {
+        .warren-logo {
+          width: 60px;
+          height: 60px;
+          object-fit: contain;
+        }
+
+        .distribution-table {
+          min-width: 340px;
+          height: 120px;
+
+          .hunt {
+            height: 120px;
+            background-color: #fc6f6f;
+          }
+
+          .weth {
+            height: 60px;
+            background-color: #373737;
+          }
+
+          .wbtc {
+            height: 60px;
+            background-color: #6d7278;
+          }
+        }
+
+        button {
+          margin-top: 45px;
+        }
+
+        @media only screen and (max-width: 930px) {
+          .detail {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+          .left-90 {
+            width: 100%;
+            margin-left: 0;
+            margin-top: 20px;
+          }
+
+          .distribution-table {
+            width: 100%;
+          }
+
+          button {
+            margin-top: 10px;
+          }
+        }
+
+        @media only screen and (max-width: 540px) {
+          .distribution-table {
+            min-width: 100%;
+            flex-direction: column;
+          }
+        }
+      }
+
+      .add-to-metamask {
+        position: relative;
+        color: #f48420;
+        height: 30px;
+        border: solid 1px #dedede;
+        background-color: #eceff1;
+        .metamask-logo {
+          width: 15px;
+          height: 15px;
+        }
+
+        .close-button {
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          right: 10px;
+          top: 10px;
+        }
+      }
+
+      .claim-item {
+        position: relative;
+        width: 220px;
+        flex-grow: 1;
+        border: solid 1px #dedede;
+
+        @media only screen and (max-width: 540px) {
+          height: 160px;
+        }
+
+        .wrn-coming-soon {
+          position: absolute;
+          z-index: 1;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.85);
+          padding: 1.25rem;
+
+          .pending-wrn {
+            position: absolute;
+            top: 55px;
+            border: solid 2px #fff;
+            border-radius: 100%;
+            @media only screen and (max-width: 1040px) and (min-width: 426px) {
+              top: 40px;
+            }
+          }
+        }
+
+        .claim-info-icon {
+          position: absolute;
+          right: 0.625rem;
+          top: 0.625rem;
+          z-index: 2;
+        }
+      }
+
+      .lockup {
+        min-height: 445px;
+        padding: 2.5rem;
+        background-color: #f5f5f7;
+
+        hr {
+          width: 50px;
+          margin-top: 25px;
+          margin-bottom: 30px;
+          border: solid 1px #dedede;
+        }
+
+        @media only screen and (max-width: 1040px) {
+          flex-direction: column;
+
+          button {
+            margin-top: 1.875rem;
+          }
+
+          .lockup-col {
+            margin-right: 0;
+          }
+
+          .claim-item {
+            padding: 2.5rem;
+            flex-grow: 1;
+            margin-top: 1.25rem;
+          }
+
+          .add-to-metamask {
+            margin-top: 1.25rem;
+            margin-bottom: 0;
+          }
+        }
+
+        @media only screen and (max-width: 700px) {
+          .claim-items {
+            flex-direction: column;
+
+            .claim-item {
+              width: 100%;
+            }
+          }
+        }
+
+        @include responsive(mobile) {
+          height: auto;
+          button {
+            margin-top: 20px;
+          }
+        }
+      }
+
+      .claim-both {
+        border: solid 1px #dedede;
+        height: 3rem;
+
+        .question-tooltip {
+          width: 0.875rem;
+          height: 0.875rem;
+          margin-left: 0.5rem;
+        }
+
+        button {
+          background-color: transparent;
+          color: $primary;
+          margin: 0;
+        }
+      }
+
+      .table-container {
+        border: solid 1px #eceff1;
+      }
+
+      table {
+        border-collapse: collapse;
+        th,
+        td {
+          padding: 0.9375rem 2.5rem;
+          text-align: left;
+          border-bottom: solid 1px #eceff1;
+        }
+
+        .unlocked {
+          background-color: #ecfbf5;
+          th,
+          td {
+            border-bottom: none;
+          }
+
+          .broken-td {
+            padding-top: 0;
+          }
+        }
+
+        .broken {
+          background-color: #ffeded;
+          th,
+          td {
+            border-bottom: none;
+          }
+
+          .broken-td {
+            padding-top: 0;
+          }
+        }
+
+        .mobile-visible {
+          display: none;
+        }
+
+        @media only screen and (max-width: 940px) {
+          .mobile-hidden {
+            display: none;
+          }
+
+          .mobile-visible {
+            display: block;
+            border-top: 1px solid #eceff1;
+          }
+
+          td {
+            padding: 1.125rem 2.5rem;
+            border-bottom: none;
+          }
+
+          .broken .mobile-visible {
+            padding-top: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .hodl-fail,
+  .hodl-success {
+    padding: 20px;
+    border: solid 1px #05b169;
+    background-color: #ecfbf5;
+    img {
+      width: auto;
+      height: 45px;
+    }
+
+    p {
+      color: #373737;
+    }
+
+    @media only screen and (max-width: 375px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      img {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .hodl-fail {
+    border: solid 1px #e02020;
+    background-color: #fff2f2;
+  }
+
+  .amount-input {
+    max-width: 240px;
+    border: none;
+    padding: 0;
+    outline: none;
+  }
+
+  .break-modal {
+    .break-amount {
+      padding: 20px;
+      background-color: #fff2f2;
+    }
+
+    .withdraw-amount {
+      padding: 20px;
+      background-color: #ecfbf5;
+    }
+  }
+
+  .auto-claim-banner {
+    position: relative;
+    padding: 1.75rem 2.5rem;
+    border: solid 1px #eceff1;
+
+    .close-button {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      top: 15px;
+      right: 15px;
+    }
+
+    a {
+      color: $primary;
+      text-decoration: none;
+    }
+  }
+
+  .multiplier {
+    height: 19px;
+    border-radius: 4px;
+    border: solid 1px #b7eb8f;
+    background-color: #f6ffed;
+    font-size: 12px;
+    color: #52c41a;
+    padding: 0 6px;
+  }
+}
