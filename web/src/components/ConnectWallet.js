@@ -48,6 +48,8 @@ function ConnectWallet(props) {
   const metamaskAvailable =
     window.web3 && window.web3.currentProvider.isMetaMask === true;
 
+  const bscAvailable = window.BinanceChain;
+
   useEffect(() => {
     if (account) {
       setVisible(false);
@@ -65,7 +67,7 @@ function ConnectWallet(props) {
               icon={bWallet}
               title={"Binance Chain Wallet"}
               onClick={() => {
-                if (metamaskAvailable) {
+                if (bscAvailable) {
                   window.localStorage.setItem("lastInjector", "bsc");
                   activate(bsc);
                 } else {
