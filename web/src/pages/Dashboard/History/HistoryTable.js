@@ -4,6 +4,7 @@ import useLockUpHistory from "hooks/useLockUpHistory";
 
 import PacmanLoader from "react-spinners/PacmanLoader";
 import HistoryTableRow from "./HistoryTableRow";
+import colors from 'constants/colors';
 // import leftPrimary from "assets/images/left-primary.svg";
 // import rightPrimary from "assets/images/right-primary.svg";
 
@@ -61,7 +62,7 @@ function HistoryTable({ symbol }) {
 
       {!lockups?.[symbol] && (
         <div className="top-60 bottom-100 col align-center">
-          <PacmanLoader size={25} color={"#0091ff"} loading={true} />
+          <PacmanLoader size={25} color={colors.primary} loading={true} />
         </div>
       )}
 
