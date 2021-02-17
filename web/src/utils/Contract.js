@@ -3,8 +3,10 @@ import { AddressZero } from "@ethersproject/constants";
 import { getAddress } from "@ethersproject/address";
 import { BigNumber } from "@ethersproject/bignumber";
 import ADDRESSES from "constants/addresses";
-import ethers from "ethers";
-import { ALCHEMY_API_KEY } from "web3/connectors";
+import { allowedChainId } from "utils/chainId";
+import Web3 from 'web3';
+
+const TESTNET_RPC = "https://data-seed-prebsc-1-s1.binance.org:8545";
 
 export function isAddress(value) {
   try {
@@ -15,14 +17,11 @@ export function isAddress(value) {
 }
 
 export function getEthersProvider(chainId) {
-  if (!chainId) return null;
+  if (allowedChainId(chainId) || !chainId) return null;
 
-  const provider = new ethers.providers.AlchemyProvider(
-    chainId,
-    ALCHEMY_API_KEY
-  );
+  var web3 = new Web3(new Web3.providers.HttpProvider(TESTNET_RPC));
 
-  return provider;
+  return web3;
 }
 
 // account is not optional

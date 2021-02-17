@@ -23,7 +23,7 @@ function WrongNetworkBanner(props) {
       }}
     >
       <p className="red max-width break-word text-center">
-        Warning: You should be connected to the Ethereum Mainnet.
+        Warning: You should be connected to BSC Testnet
       </p>
     </div>
   ) : null;

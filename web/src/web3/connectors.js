@@ -13,6 +13,8 @@ export const ALCHEMY_API_KEY = "pIsSDYko10jWKs8jDVY9nTihQYgvg_Fi";
 const RPC_URLS = {
   1: `https://eth-mainnet.alchemyapi.io/v2/${ALCHEMY_API_KEY}`,
   5: "https://goerli.infura.io/v3/88c638b39c3f4ed984739797ec348f53",
+  56: "https://data-seed-prebsc-1-s1.binance.org:8545/",
+  97: "https://data-seed-prebsc-1-s1.binance.org:8545/"
 };
 
 export const bsc = new BscConnector({

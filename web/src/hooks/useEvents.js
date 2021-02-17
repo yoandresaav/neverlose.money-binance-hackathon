@@ -299,8 +299,8 @@ function useEvents(symbol) {
       }
     }
 
-    listen();
-    update();
+    // listen();
+    // update();
   }, []);
 
   return { update, events, fetching, lastUpdateTimestamp };

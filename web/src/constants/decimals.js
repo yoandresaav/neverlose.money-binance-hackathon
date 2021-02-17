@@ -3,5 +3,7 @@ export default {
   WBTC: 8,
   HUNT: 18,
   WRN: 18,
-  ETH: 18
+  ETH: 18,
+  BNB: 18,
+  BTCB: 18
 };

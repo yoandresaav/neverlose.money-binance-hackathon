@@ -43,6 +43,7 @@ export function useWETH(address) {
 
 export function useWRNRewardPool() {
   const { chainId } = useWeb3React();
+  console.log(chainId, WRNRewardPoolABI)
   return useContract(
     allowedChainId(chainId) && ADDRESSES[chainId]?.WRNRewardPool,
     WRNRewardPoolABI,
