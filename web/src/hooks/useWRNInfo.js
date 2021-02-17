@@ -5,6 +5,7 @@ import Web3 from "web3";
 import ADDRESSES from "constants/addresses";
 import BigNumber from "bignumber.js";
 import { handleErrorMessage } from "utils/errors";
+import { getEthersProvider } from "utils/Contract";
 
 function useWRNInfo(props) {
   const chainId = 97;
@@ -15,11 +16,7 @@ function useWRNInfo(props) {
   useEffect(() => {
     (async () => {
       try {
-        const web3 = new Web3(
-          new Web3.providers.HttpProvider(
-            `https://eth-mainnet.alchemyapi.io/v2/${ALCHEMY_API_KEY}`
-          )
-        );
+        const web3 = getEthersProvider(chainId);
         const token = new web3.eth.Contract(
           ERC20TokenABI,
           ADDRESSES[chainId].WRN

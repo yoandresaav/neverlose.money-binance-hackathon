@@ -4,7 +4,6 @@ import { WalletLinkConnector } from "@web3-react/walletlink-connector";
 import { LedgerConnector } from "@web3-react/ledger-connector";
 import { BscConnector } from '@binance-chain/bsc-connector'
 
-
 const POLLING_INTERVAL = 12000;
 
 export const ALCHEMY_API_KEY = "pIsSDYko10jWKs8jDVY9nTihQYgvg_Fi";
@@ -22,7 +21,7 @@ export const bsc = new BscConnector({
 })
 
 export const injected = new InjectedConnector({
-  supportedChainIds: [1, 3, 4, 5, 42, 1337],
+  supportedChainIds: [1, 3, 4, 5, 42, 1337, 56, 97],
 });
 
 export const dcent = new InjectedConnector({

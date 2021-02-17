@@ -6,6 +6,7 @@ import { useERC20Token } from "hooks/useContract";
 import ADDRESSES from "constants/addresses";
 import BigNumber from "bignumber.js";
 import DECIMALS from "constants/decimals";
+import { call } from "utils/binance";
 
 function useDashboard(symbol) {
   const { account, chainId } = useWeb3React();
@@ -21,7 +22,7 @@ function useDashboard(symbol) {
   useEffect(() => {
     (async () => {
       if (rewardPool && symbol && token) {
-        console.log("attempting");
+        console.log("attempting", token, rewardPool);
         setData((_data) => {
           return {
             ..._data,
@@ -29,13 +30,20 @@ function useDashboard(symbol) {
           };
         });
 
-        console.log("lockups", ADDRESSES[chainId]?.[symbol], account);
+        //         console.log("lockups", ADDRESSES[chainId]?.[symbol], account);
+        //
+                // call(rewardPool, ADDRESSES[chainId]?.[symbol], account);
 
         const bn = await rewardPool.userLockUps(
           ADDRESSES[chainId]?.[symbol],
           account
         );
 
+//         console.log("bn", bn);
+// 
+//         const result = await bn.call();
+// 
+//         console.log(result);
 
         const [
           total,

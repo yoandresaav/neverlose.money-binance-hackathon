@@ -6,7 +6,7 @@ import ADDRESSES from "constants/addresses";
 import { allowedChainId } from "utils/chainId";
 import Web3 from 'web3';
 
-const TESTNET_RPC = "https://data-seed-prebsc-1-s1.binance.org:8545";
+export const HTTP_PROVIDER = "https://data-seed-prebsc-1-s2.binance.org:8545";
 
 export function isAddress(value) {
   try {
@@ -17,9 +17,9 @@ export function isAddress(value) {
 }
 
 export function getEthersProvider(chainId) {
-  if (allowedChainId(chainId) || !chainId) return null;
+  if (!allowedChainId(chainId) || !chainId) return null;
 
-  var web3 = new Web3(new Web3.providers.HttpProvider(TESTNET_RPC));
+  const web3 = new Web3(HTTP_PROVIDER);
 
   return web3;
 }
@@ -41,6 +41,7 @@ export function getContract(address, ABI, library, account) {
   }
 
   return new Contract(address, ABI, getProviderOrSigner(library, account));
+  // return new web3.eth.Contract(ABI, address);
 }
 
 export function getSymbol(chainId, address) {

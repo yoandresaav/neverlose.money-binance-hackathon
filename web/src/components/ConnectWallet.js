@@ -86,7 +86,7 @@ function ConnectWallet(props) {
               onClick={() => {
                 if (metamaskAvailable) {
                   window.localStorage.setItem("lastInjector", "metamask");
-                  activate(bsc);
+                  activate(injected);
                 } else {
                   window.open("https://metamask.io/", "_blank");
                 }

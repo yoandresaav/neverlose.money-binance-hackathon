@@ -11,7 +11,6 @@ import numeral from "numeral";
 import ETHERSCAN from "constants/etherscan";
 import { utils } from "ethers";
 import { abi as WRNRewardPoolABI } from "abi/WRNRewardPool.json";
-import { ALCHEMY_API_KEY } from "web3/connectors";
 import { handleErrorMessage } from "utils/errors";
 
 const EVENTS_PER_SCROLL = 30;
@@ -109,7 +108,7 @@ function useEvents(symbol) {
 
       setEvents((prev) => (prev ? prev.concat(parsedEvents) : parsedEvents));
       setFetching(false);
-      update(); //keep fetching until break condition is met
+      // update(); //keep fetching until break condition is met
     } catch (e) {
       handleErrorMessage("Failed to fetch events. Please try again later.");
     }
@@ -118,9 +117,7 @@ function useEvents(symbol) {
   useEffect(() => {
     const rewardPoolAddress = ADDRESSES[chainId]?.["WRNRewardPool"];
     const web3 = new Web3(
-      new Web3.providers.WebsocketProvider(
-        `wss://eth-mainnet.ws.alchemyapi.io/v2/${ALCHEMY_API_KEY}`
-      )
+      new Web3.providers.WebsocketProvider("wss://bsc-ws-node.nariox.org:443")
     );
     const contract = new web3.eth.Contract(abi, rewardPoolAddress);
 
@@ -295,7 +292,9 @@ function useEvents(symbol) {
           })
           .on("error", console.error);
       } catch (e) {
-        handleErrorMessage("Failed to attach events listener. Please try again later.");
+        handleErrorMessage(
+          "Failed to attach events listener. Please try again later."
+        );
       }
     }
 

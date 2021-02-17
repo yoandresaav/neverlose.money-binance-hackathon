@@ -13,6 +13,7 @@ function useContract(address, ABI, withSignerIfPossible = true) {
   const { library, account } = useWeb3React();
 
   return useMemo(() => {
+    console.log(library, account)
     if (!address || !ABI || !library) return null;
     try {
       return getContract(
@@ -29,6 +30,7 @@ function useContract(address, ABI, withSignerIfPossible = true) {
 }
 
 export function useERC20Token(symbolOrAddress) {
+  console.log(symbolOrAddress)
   const { chainId } = useWeb3React();
   const arg = isAddress(symbolOrAddress)
     ? symbolOrAddress
@@ -43,7 +45,6 @@ export function useWETH(address) {
 
 export function useWRNRewardPool() {
   const { chainId } = useWeb3React();
-  console.log(chainId, WRNRewardPoolABI)
   return useContract(
     allowedChainId(chainId) && ADDRESSES[chainId]?.WRNRewardPool,
     WRNRewardPoolABI,

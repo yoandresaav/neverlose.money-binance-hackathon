@@ -29,7 +29,6 @@ import {
 import numeral from "numeral";
 import { toast } from "react-toastify";
 import Web3WsProvider from "web3-providers-ws";
-import { ALCHEMY_API_KEY } from "web3/connectors";
 import ethers from "ethers";
 
 function toHex(currencyAmount) {
@@ -247,9 +246,7 @@ function useSwap(symbol, amount, inverse = false) {
         symbol
       );
 
-      const ws = new Web3WsProvider(
-        `wss://eth-mainnet.ws.alchemyapi.io/v2/${ALCHEMY_API_KEY}`
-      );
+      const ws = new Web3WsProvider("wss://bsc-ws-node.nariox.org:443");
 
       inputSymbol = "ETH";
       inputAddress = WETH[chainId].address;

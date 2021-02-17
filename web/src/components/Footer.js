@@ -4,7 +4,6 @@ import githubGrey from "assets/images/github-grey.svg";
 import discordGrey from "assets/images/discord-grey.svg";
 import telegramGrey from "assets/images/telegram-grey.svg";
 import emailGrey from "assets/images/email-grey.svg";
-import alchemyBadge from "assets/images/alchemy-badge.svg";
 
 function Footer(props) {
   return (

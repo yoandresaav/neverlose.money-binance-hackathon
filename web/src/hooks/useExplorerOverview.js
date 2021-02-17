@@ -4,11 +4,10 @@ import { txTimestampAtom } from "atoms";
 import { TX_TYPE_LOCKUP, TX_TYPE_EXIT } from "constants/index";
 import { abi } from "abi/WRNRewardPool.json";
 import { abi as ERC20TokenABI } from "abi/ERC20Token.json";
-import Web3 from "web3";
 import ADDRESSES from "constants/addresses";
 import DECIMALS from "constants/decimals";
 import BigNumber from "bignumber.js";
-import { ALCHEMY_API_KEY } from "web3/connectors";
+import { getEthersProvider } from "utils/Contract";
 
 function useExplorerOverview() {
   const chainId = 97;
@@ -20,15 +19,12 @@ function useExplorerOverview() {
 
   useEffect(() => {
     const rewardPoolAddress = ADDRESSES[chainId]?.["WRNRewardPool"];
-    const web3 = new Web3(
-      new Web3.providers.HttpProvider(
-        `https://eth-mainnet.alchemyapi.io/v2/${ALCHEMY_API_KEY}`
-      )
-    );
+    const web3 = getEthersProvider(chainId);
     const token = new web3.eth.Contract(ERC20TokenABI, ADDRESSES[chainId].WRN);
     const rewardPool = new web3.eth.Contract(abi, rewardPoolAddress);
 
     async function getValues(tokenAddress, symbol) {
+      console.log(rewardPool);
       let values = await rewardPool.methods.tokenStats(tokenAddress).call();
       const activeLockUp = values[1];
       const penalty = values[4];
