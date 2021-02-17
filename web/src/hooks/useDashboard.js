@@ -12,9 +12,9 @@ function useDashboard(symbol) {
   const rewardPool = global.rewardPool;
   const { type, timestamp } = useRecoilValue(txTimestampAtom);
   const [data, setData] = useState({
-    WETH: {},
-    WBTC: {},
-    HUNT: {},
+    ETH: {},
+    BTCB: {},
+    BNB: {},
   });
   const token = useERC20Token(symbol);
 

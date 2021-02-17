@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Link, withRouter } from "react-router-dom";
 import ethBlue from "assets/images/eth-blue.svg";
 import wbtcBlue from "assets/images/wbtc-blue.svg";
-import huntBlue from "assets/images/hunt-blue.svg";
+import bnbLogo from "assets/images/bnb-logo.svg";
 import { tabIndexAtom } from "atoms/dashboard";
 import { useRecoilState } from "recoil";
 import useResizeObserver from "use-resize-observer";
@@ -15,9 +15,9 @@ function TabHeader(props) {
   const id = props?.match?.params?.id;
 
   useEffect(() => {
-    if (id === "weth") setTabIndex(0);
-    else if (id === "wbtc") setTabIndex(1);
-    else if (id === "hunt") setTabIndex(2);
+    if (id === "eth") setTabIndex(0);
+    else if (id === "btcb") setTabIndex(1);
+    else if (id === "bnb") setTabIndex(2);
     else props.history.push("/dashboard/weth");
   }, [id]); //eslint-disable-line
 
@@ -27,17 +27,17 @@ function TabHeader(props) {
         className="tab-selected"
         style={{ left: width ? tabIndex * width : 0, width: width }}
       />
-      <Link ref={ref} to="/dashboard/weth" className="history-tab centered">
+      <Link ref={ref} to="/dashboard/eth" className="history-tab centered">
         <img src={ethBlue} alt="" />
-        <h6 className="left-5">WETH</h6>
+        <h6 className="left-5">ETH</h6>
       </Link>
-      <Link to="/dashboard/wbtc" className="history-tab centered">
+      <Link to="/dashboard/btcb" className="history-tab centered">
         <img src={wbtcBlue} alt="" />
-        <h6 className="left-5">WBTC</h6>
+        <h6 className="left-5">BTCB</h6>
       </Link>
-      <Link to="/dashboard/hunt" className="history-tab centered">
-        <img src={huntBlue} alt="" />
-        <h6 className="left-5">HUNT</h6>
+      <Link to="/dashboard/bnb" className="history-tab centered">
+        <img src={bnbLogo} alt="" />
+        <h6 className="left-5">BNB</h6>
       </Link>
       <PendingTransactions />
     </div>
