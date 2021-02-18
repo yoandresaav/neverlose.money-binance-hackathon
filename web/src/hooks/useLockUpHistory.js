@@ -37,10 +37,9 @@ function useLockUpHistory(symbol) {
         nonNullCondition ||
         (nonNullCondition && lastTx.type === TX_TYPE_LOCKUP)
       ) {
-        const bn = Object.values(
-          await rewardPool.methods
-            .userLockUps(ADDRESSES[chainId]?.[symbol], account)
-            .call()
+        const bn = await rewardPool.userLockUps(
+          ADDRESSES[chainId]?.[symbol],
+          account
         );
         const [, , , , , lockedUpCount] = bn.map((bignum) => bignum.toString());
 
@@ -122,9 +121,11 @@ function useLockUpHistory(symbol) {
 
                 setPendingModalVisible(tx);
                 await tx.wait();
-                const _data = await rewardPool.methods
-                  .getLockUp(ADDRESSES[chainId]?.[symbol], account, id)
-                  .call();
+                const _data = await rewardPool.getLockUp(
+                  ADDRESSES[chainId]?.[symbol],
+                  account,
+                  id
+                );
                 const fabricated = await fabricate(id, _data);
 
                 setLockUps((_lockUps) => {

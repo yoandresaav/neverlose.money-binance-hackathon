@@ -24,6 +24,7 @@ function useExplorerOverview() {
     const rewardPool = new web3.eth.Contract(abi, rewardPoolAddress);
 
     async function getValues(tokenAddress, symbol) {
+      console.log(rewardPool);
       let values = await rewardPool.methods.tokenStats(tokenAddress).call();
       const activeLockUp = values[1];
       const penalty = values[4];
