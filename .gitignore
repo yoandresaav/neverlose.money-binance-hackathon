@@ -17,7 +17,6 @@ Thumbs.db
 
 # production
 */build
-*/deploy
 */node_modules
 *.env
 
