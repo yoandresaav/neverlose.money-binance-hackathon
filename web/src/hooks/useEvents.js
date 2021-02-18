@@ -31,6 +31,7 @@ function useEvents(symbol) {
   const chainId = 97;
 
   const ethersProvider = getEthersProvider(chainId);
+
   async function update() {
     try {
       if (fetching) return;
@@ -52,7 +53,7 @@ function useEvents(symbol) {
       lastFetchedInfo.current.attempts += 1;
       const currentBlock =
         lastFetchedInfo.current.lastBlockFetched ||
-        (await ethersProvider.getBlockNumber());
+        (await ethersProvider.eth.getBlockNumber());
 
       setFetching(true);
 
@@ -60,24 +61,26 @@ function useEvents(symbol) {
       const fromBlock = currentBlock - (3 * 86400) / 12;
 
       const filter = {
-        address: ADDRESSES[chainId]?.WRNRewardPool,
         fromBlock,
         toBlock: currentBlock,
       };
 
-      var iface = new utils.Interface(WRNRewardPoolABI);
-      const logs = await ethersProvider.getLogs(filter);
+      const rewardPoolAddress = ADDRESSES[chainId]?.["WRNRewardPool"];
+      const rewardPool = new ethersProvider.eth.Contract(
+        abi,
+        rewardPoolAddress
+      );
+      const logs = await rewardPool.getPastEvents("allEvents", filter);
 
       //format the object to match the object pattern retruned from web3
       let parsedEvents = logs
         .map((log, index) => {
-          let { name: event, args } = iface.parseLog(log);
-          let returnValues = {};
+          let { event, returnValues } = log;
 
-          Object.keys(args).forEach((key) => {
+          Object.keys(returnValues).forEach((key) => {
             // only take string keys into consideration
             if (Number.isNaN(+key)) {
-              returnValues[key] = args[key].toString();
+              returnValues[key] = returnValues[key].toString();
             }
           });
 
@@ -110,20 +113,22 @@ function useEvents(symbol) {
       setFetching(false);
       // update(); //keep fetching until break condition is met
     } catch (e) {
+      console.error(e);
       handleErrorMessage("Failed to fetch events. Please try again later.");
     }
   }
 
   useEffect(() => {
     const rewardPoolAddress = ADDRESSES[chainId]?.["WRNRewardPool"];
-    const web3 = new Web3(
-      new Web3.providers.WebsocketProvider("wss://bsc-ws-node.nariox.org:443")
-    );
+    // const web3 = new Web3(
+    //   new Web3.providers.WebsocketProvider("wss://bsc-ws-node.nariox.org:443")
+    // );
+    const web3 = getEthersProvider(97);
     const contract = new web3.eth.Contract(abi, rewardPoolAddress);
 
     async function listen() {
       try {
-        const currentBlock = await ethersProvider.getBlockNumber();
+        const currentBlock = await ethersProvider.eth.getBlockNumber();
         contract.events
           .allEvents({
             fromBlock: currentBlock,
@@ -292,6 +297,7 @@ function useEvents(symbol) {
           })
           .on("error", console.error);
       } catch (e) {
+        console.error(e);
         handleErrorMessage(
           "Failed to attach events listener. Please try again later."
         );
@@ -299,7 +305,7 @@ function useEvents(symbol) {
     }
 
     // listen();
-    // update();
+    update();
   }, []);
 
   return { update, events, fetching, lastUpdateTimestamp };
