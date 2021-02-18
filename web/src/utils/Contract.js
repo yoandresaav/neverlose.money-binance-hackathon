@@ -45,7 +45,7 @@ export function getContract(address, ABI, library, account) {
   const web3 = new Web3(httpProvider);
 
   // return new Contract(address, ABI, web3);
-  return new web3.eth.Contract(ABI, address);
+  return new web3.eth.Contract(ABI, address, {from: account});
 }
 
 export function getSymbol(chainId, address) {

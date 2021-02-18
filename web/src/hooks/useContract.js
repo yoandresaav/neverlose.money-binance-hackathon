@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { abi as ERC20TokenABI } from "abi/ERC20Token.json";
+import ERC20TokenABI from "abi/ERC20Token.json";
 import { abi as WRNRewardPoolABI } from "abi/WRNRewardPool.json";
 import WETH_ABI from "abi/WETH.json";
 import { getContract, isAddress } from "utils/Contract";

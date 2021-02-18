@@ -3,7 +3,7 @@ import { useRecoilValue } from "recoil";
 import { txTimestampAtom } from "atoms";
 import { TX_TYPE_LOCKUP, TX_TYPE_EXIT } from "constants/index";
 import { abi } from "abi/WRNRewardPool.json";
-import { abi as ERC20TokenABI } from "abi/ERC20Token.json";
+import ERC20TokenABI from "abi/ERC20Token.json";
 import ADDRESSES from "constants/addresses";
 import DECIMALS from "constants/decimals";
 import BigNumber from "bignumber.js";

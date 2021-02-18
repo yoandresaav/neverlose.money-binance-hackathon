@@ -12,9 +12,10 @@ import { txTimestampAtom, transactionPendingModal, pendingTx } from "atoms";
 import { TX_TYPE_APPROVE } from "constants/index";
 import { handleErrorMessage } from "utils/errors";
 import { useWeb3React } from "@web3-react/core";
+import { ethers } from 'ethers'
 
 function ApproveModal({ symbol }) {
-  const { chainId } = useWeb3React();
+  const { account, chainId } = useWeb3React();
   const [visible, setVisible] = useRecoilState(approveModal);
   const [, setPendingModalVisible] = useRecoilState(transactionPendingModal);
   const [, setTxTimestamp] = useRecoilState(txTimestampAtom);
@@ -46,11 +47,14 @@ function ApproveModal({ symbol }) {
           )}
           onClick={async () => {
             const actionTimestamp = new Date().getTime();
+            console.log(ADDRESSES[chainId].WRNRewardPool, account, token);
             try {
-              const tx = await token.approve(
-                ADDRESSES[chainId]?.WRNRewardPool,
-                "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
-              );
+              const tx = await token.methods
+                .approve(
+                  ADDRESSES[chainId]?.WRNRewardPool,
+                  "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+                )
+                .send();
               setVisible(false);
               setPendingModalVisible(tx);
               setPendingTx((txArr) =>
@@ -62,12 +66,13 @@ function ApproveModal({ symbol }) {
                   tx,
                 })
               );
-              await tx.wait();
+              // await tx.wait();
               setTxTimestamp({
                 type: TX_TYPE_APPROVE,
                 timestamp: new Date().getTime(),
               });
             } catch (e) {
+              console.log(e)
               handleErrorMessage(e);
             } finally {
               setPendingModalVisible(false);

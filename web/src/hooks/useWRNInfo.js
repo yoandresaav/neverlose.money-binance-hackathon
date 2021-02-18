@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { abi as ERC20TokenABI } from "abi/ERC20Token.json";
+import ERC20TokenABI from "abi/ERC20Token.json";
 import { ALCHEMY_API_KEY } from "web3/connectors";
 import Web3 from "web3";
 import ADDRESSES from "constants/addresses";
