@@ -27,6 +27,10 @@ function TabHeader(props) {
         className="tab-selected"
         style={{ left: width ? tabIndex * width : 0, width: width }}
       />
+      <Link to="/dashboard/bnb" className="history-tab centered">
+        <img src={bnbLogo} alt="" />
+        <h6 className="left-5">BNB</h6>
+      </Link>
       <Link ref={ref} to="/dashboard/eth" className="history-tab centered">
         <img src={ethBlue} alt="" />
         <h6 className="left-5">ETH</h6>
@@ -34,10 +38,6 @@ function TabHeader(props) {
       <Link to="/dashboard/btcb" className="history-tab centered">
         <img src={wbtcBlue} alt="" />
         <h6 className="left-5">BTCB</h6>
-      </Link>
-      <Link to="/dashboard/bnb" className="history-tab centered">
-        <img src={bnbLogo} alt="" />
-        <h6 className="left-5">BNB</h6>
       </Link>
       <PendingTransactions />
     </div>
