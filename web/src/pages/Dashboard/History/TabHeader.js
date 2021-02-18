@@ -15,10 +15,10 @@ function TabHeader(props) {
   const id = props?.match?.params?.id;
 
   useEffect(() => {
-    if (id === "eth") setTabIndex(0);
+    if (id === "bnb") setTabIndex(0);
     else if (id === "btcb") setTabIndex(1);
-    else if (id === "bnb") setTabIndex(2);
-    else props.history.push("/dashboard/weth");
+    else if (id === "eth") setTabIndex(2);
+    else props.history.push("/dashboard/bnb");
   }, [id]); //eslint-disable-line
 
   return (
@@ -31,13 +31,13 @@ function TabHeader(props) {
         <img src={bnbLogo} alt="" />
         <h6 className="left-5">BNB</h6>
       </Link>
-      <Link ref={ref} to="/dashboard/eth" className="history-tab centered">
-        <img src={ethBlue} alt="" />
-        <h6 className="left-5">ETH</h6>
-      </Link>
       <Link to="/dashboard/btcb" className="history-tab centered">
         <img src={wbtcBlue} alt="" />
         <h6 className="left-5">BTCB</h6>
+      </Link>
+      <Link ref={ref} to="/dashboard/eth" className="history-tab centered">
+        <img src={ethBlue} alt="" />
+        <h6 className="left-5">ETH</h6>
       </Link>
       <PendingTransactions />
     </div>
