@@ -17,10 +17,17 @@ function useTokenPrices() {
         const resp = await fetch(apiURL);
 
         const {
-          prices: { HUNT: hunt, BTC: wbtc, ETH: weth },
+          prices: { HUNT: hunt, BTC: wbtc, ETH: weth, BNB: bnb },
         } = await resp.json();
 
-        const _prices = { WETH: weth, WBTC: wbtc, HUNT: hunt };
+        const _prices = {
+          WETH: weth,
+          WBTC: wbtc,
+          HUNT: hunt,
+          ETH: weth,
+          BTCB: wbtc,
+          BNB: bnb,
+        };
         setData(_prices);
         callingAPI.current = false;
       } catch (e) {

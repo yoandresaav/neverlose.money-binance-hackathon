@@ -7,6 +7,7 @@ import openPrimary from "assets/images/open-primary.svg";
 import ETHERSCAN from "constants/etherscan";
 import Web3 from "web3";
 import { ALCHEMY_API_KEY } from "web3/connectors";
+import { getEthersProvider } from "utils/Contract";
 
 function PendingTransactions(props) {
   const { account, chainId, library } = useWeb3React();
@@ -18,11 +19,7 @@ function PendingTransactions(props) {
 
     async function refresh() {
       if (account && library) {
-        const web3 = new Web3(
-          new Web3.providers.HttpProvider(
-            `https://eth-mainnet.alchemyapi.io/v2/${ALCHEMY_API_KEY}`
-          )
-        );
+        const web3 = getEthersProvider(chainId);
 
         const cached = JSON.parse(
           window.localStorage.getItem(`${account}:pending-transactions`) || "[]"
