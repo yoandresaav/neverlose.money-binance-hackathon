@@ -31,7 +31,7 @@ function App() {
         </Web3ReactProvider>
       </RecoilRoot>
       <ToastContainer />
-      <DiscordFAB />
+      {/* <DiscordFAB /> */}
     </>
   );
 }

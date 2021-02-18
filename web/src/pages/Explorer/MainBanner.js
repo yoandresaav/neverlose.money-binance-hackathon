@@ -91,7 +91,7 @@ function MainBanner(props) {
         </h4>
         <div className="row top-40">
           <button
-            className="right-10"
+            // className="right-10"
             onClick={() => {
               if (!account) setVisible(true);
               else props.history.push("/dashboard");
@@ -99,12 +99,12 @@ function MainBanner(props) {
           >
             Get started
           </button>
-          <button
-            className="left-10 black-bg white"
-            onClick={() => setCalculatorVisible(true)}
-          >
-            Calculate bonus
-          </button>
+          {/* <button */}
+          {/*   className="left-10 black-bg white" */}
+          {/*   onClick={() => setCalculatorVisible(true)} */}
+          {/* > */}
+          {/*   Calculate bonus */}
+          {/* </button> */}
         </div>
       </div>
     </div>
