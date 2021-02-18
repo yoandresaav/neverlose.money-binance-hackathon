@@ -30,20 +30,11 @@ function useDashboard(symbol) {
           };
         });
 
-        //         console.log("lockups", ADDRESSES[chainId]?.[symbol], account);
-        //
-                // call(rewardPool, ADDRESSES[chainId]?.[symbol], account);
-
-        const bn = await rewardPool.userLockUps(
-          ADDRESSES[chainId]?.[symbol],
-          account
+        const bn = Object.values(
+          await rewardPool.methods
+            .userLockUps(ADDRESSES[chainId]?.[symbol], account)
+            .call()
         );
-
-//         console.log("bn", bn);
-// 
-//         const result = await bn.call();
-// 
-//         console.log(result);
 
         const [
           total,
@@ -56,47 +47,49 @@ function useDashboard(symbol) {
             .toNumber()
         );
 
-        const d = await rewardPool.tokenStats(ADDRESSES[chainId]?.[symbol]);
+        const d = Object.values(
+          await rewardPool.methods
+            .tokenStats(ADDRESSES[chainId]?.[symbol])
+            .call()
+        );
 
-        console.log("token stats", d);
         const [, , effectiveTotalLockUp] = d.map((bignum) =>
           new BigNumber(bignum.toString())
             .dividedBy(Math.pow(10, DECIMALS[symbol]))
             .toNumber()
         );
 
-        const _bonus = await rewardPool.earnedBonus(
-          ADDRESSES[chainId]?.[symbol]
-        );
+        const _bonus = await rewardPool.methods
+          .earnedBonus(ADDRESSES[chainId]?.[symbol])
+          .call();
         const bonus = new BigNumber(_bonus.toString())
           .dividedBy(Math.pow(10, DECIMALS[symbol]))
           .toNumber();
 
-        const [_claimedWRN] = await rewardPool.userWRNRewards(
-          ADDRESSES[chainId]?.[symbol],
-          account
-        );
+        const [_claimedWRN] = Object.values(await rewardPool.methods
+          .userWRNRewards(ADDRESSES[chainId]?.[symbol], account)
+          .call());
 
         const claimedWRN = new BigNumber(_claimedWRN.toString())
           .dividedBy(1e18)
           .toString();
 
-        const _pendingWRN = await rewardPool.pendingWRN(
-          ADDRESSES[chainId]?.[symbol]
-        );
+        const _pendingWRN = await rewardPool.methods
+          .pendingWRN(ADDRESSES[chainId]?.[symbol])
+          .call();
 
         const pendingWRN = new BigNumber(_pendingWRN.toString())
           .dividedBy(1e18)
           .toString();
 
         const allowance = (
-          await token.allowance(account, ADDRESSES[chainId]?.WRNRewardPool)
+          await token.methods
+            .allowance(account, ADDRESSES[chainId]?.WRNRewardPool)
+            .call()
         ).toString();
 
         const percentageLocked = effectiveTotal / effectiveTotalLockUp;
         const roi = (bonusClaimed + bonus) / accTotal;
-
-        console.log(allowance);
 
         setData((_data) => {
           return {

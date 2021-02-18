@@ -20,9 +20,9 @@ function useInvestmentOverview() {
 
   useEffect(() => {
     async function getValues(address) {
-      let bonus = await rewardPool.earnedBonus(address);
+      let bonus = await rewardPool.methods.earnedBonus(address).call();
       bonus = new BigNumber(bonus.toString());
-      const claimed = await rewardPool.userLockUps(address, account);
+      const claimed = Object.values(await rewardPool.methods.userLockUps(address, account).call());
       let [total, , accTotal, bonusClaimed] = claimed.map(
         (bignum) => new BigNumber(bignum.toString())
       );

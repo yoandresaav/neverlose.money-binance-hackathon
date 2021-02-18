@@ -20,10 +20,11 @@ function useAllowance(symbol) {
         type === TX_TYPE_APPROVE
       ) {
         setAllowance(0);
-        const bn = await token.allowance(
+        const bn = await token.methods.allowance(
           account,
           ADDRESSES[chainId]?.WRNRewardPool
-        );
+        ).call();
+        console.log("allowance", bn);
         setAllowance(bn.toString());
       }
     })();

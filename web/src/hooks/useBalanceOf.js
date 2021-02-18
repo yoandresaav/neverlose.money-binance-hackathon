@@ -23,8 +23,9 @@ function useBalanceOf(symbol) {
           (type === TX_TYPE_UNISWAP_SWAP || type === TX_TYPE_UNISWAP_WRAP))
       ) {
         setBalanceOf(null);
-        const bn = await token.balanceOf(account);
-        const decimals = await token.decimals();
+        const bn = await token.methods.balanceOf(account).call();
+        const decimals = await token.methods.decimals().call();
+        console.log(bn, decimals);
         setBalanceOf(
           new BigNumber(bn.toString())
             .dividedBy(Math.pow(10, decimals))
