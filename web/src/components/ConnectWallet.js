@@ -63,6 +63,20 @@ function ConnectWallet(props) {
           <h4 className="top-30">Connect Wallet</h4>
           <div className="top-70 col max-width">
             <WalletItem
+              className="top-15"
+              icon={metamaskLogo}
+              title={metamaskAvailable ? "Metamask" : "Install Metamask"}
+              onClick={() => {
+                if (metamaskAvailable) {
+                  window.localStorage.setItem("lastInjector", "metamask");
+                  activate(injected);
+                } else {
+                  window.open("https://metamask.io/", "_blank");
+                }
+              }}
+              connected={connected && connector === injected}
+            />
+            <WalletItem
               icon={bWallet}
               title={"Binance Chain Wallet"}
               onClick={() => {
@@ -77,20 +91,7 @@ function ConnectWallet(props) {
                 }
               }}
               connected={connected && connector === bsc}
-            />
-            <WalletItem
-              className="top-15"
-              icon={metamaskLogo}
-              title={metamaskAvailable ? "Metamask" : "Install Metamask"}
-              onClick={() => {
-                if (metamaskAvailable) {
-                  window.localStorage.setItem("lastInjector", "metamask");
-                  activate(injected);
-                } else {
-                  window.open("https://metamask.io/", "_blank");
-                }
-              }}
-              connected={connected && connector === injected}
+              disabled="disabled"
             />
             <WalletItem
               className="top-15"
