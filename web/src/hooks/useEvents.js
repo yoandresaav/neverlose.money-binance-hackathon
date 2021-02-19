@@ -17,6 +17,8 @@ const EVENTS_PER_SCROLL = 30;
 const GENESIS_BLOCK = 11469300;
 const MAX_ATTEMPTS = 10;
 
+const BLOCK_MINE_SECONDS = 3;
+
 function useEvents(symbol) {
   const lastFetchedInfo = useRef({
     numberOfEvents: 0,
@@ -58,7 +60,7 @@ function useEvents(symbol) {
       setFetching(true);
 
       //3 days worth of events per fetch
-      const fromBlock = currentBlock - (3 * 86400) / 12;
+      const fromBlock = currentBlock - (3 * 86400) / BLOCK_MINE_SECONDS;
 
       const filter = {
         fromBlock,
