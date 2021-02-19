@@ -6,7 +6,6 @@ import loadingPrimary from "assets/images/loading-primary.svg";
 import openPrimary from "assets/images/open-primary.svg";
 import ETHERSCAN from "constants/etherscan";
 import Web3 from "web3";
-import { ALCHEMY_API_KEY } from "web3/connectors";
 import { getEthersProvider } from "utils/Contract";
 
 function PendingTransactions(props) {
