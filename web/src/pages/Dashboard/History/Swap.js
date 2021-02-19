@@ -111,7 +111,7 @@ function Swap({ symbol = "HUNT" }) {
         />
       </div>
 
-      {collapsed ? (
+      {collapsed ?   (
         <h6 className="white collapsed-title">{collapsedTitle}</h6>
       ) : (
         <>
@@ -277,18 +277,6 @@ function Swap({ symbol = "HUNT" }) {
                   buttonText
                 )}
               </button>
-            </div>
-
-            <div className="font-10 top-5 right-5 light-grey">
-              Powered by{" "}
-              <a
-                className="white underline"
-                href={`https://app.uniswap.org/#/swap?outputCurrency=${ADDRESSES[chainId]?.[symbol]}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Uniswap
-              </a>
             </div>
           </div>
         </>

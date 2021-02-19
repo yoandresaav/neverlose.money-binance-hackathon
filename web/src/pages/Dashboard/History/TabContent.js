@@ -13,7 +13,20 @@ import LockUpInformation from "./LockUpInformation";
 function TabContent({ symbol }) {
   return (
     <div className="tab-content col">
-      <Swap symbol={symbol} />
+      {symbol === "WBNB" && <Swap symbol={symbol} />}
+      {symbol !== "WBNB" && (
+        <div className="swap-interface top-40 white">
+          Receive test {symbol} from{" "}
+          <a
+            href="https://testnet.binance.org/faucet-smart"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Binance Smart Chain Faucet
+          </a>
+          .
+        </div>
+      )}
 
       <div className="row justify-between wrap">
         <div className="lockup max-width top-40 row justify-between">
