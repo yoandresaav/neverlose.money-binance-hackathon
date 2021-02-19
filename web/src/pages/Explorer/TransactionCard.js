@@ -54,8 +54,8 @@ function TransactionCard(props) {
           returnValues.token || returnValues.tokenAddress
         );
         fabricatedData.symbol = symbol;
-        if (symbol === "WBTC") fabricatedData.imgSrc = wbtcBlue;
-        else if (symbol === "HUNT") fabricatedData.imgSrc = bnbLogo;
+        if (symbol === "BTCB") fabricatedData.imgSrc = wbtcBlue;
+        else if (symbol === "WBNB") fabricatedData.imgSrc = bnbLogo;
 
         fabricatedData[key] = new BigNumber(val)
           .dividedBy(
