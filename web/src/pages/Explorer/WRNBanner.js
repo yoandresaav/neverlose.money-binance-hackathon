@@ -14,7 +14,7 @@ import DECIMALS from "constants/decimals";
 import IMAGES from "constants/images";
 
 const MAX_SUPPLY = 1200000;
-const WRN_ADDRESS = "0x6a76fe028056717703f357d1d073b439e4d24b0e";
+const WRN_ADDRESS = "0xdd42f573125b920b25769b903d4d2c831bd46340";
 
 function WRNBanner(props) {
   const { totalSupply, WRNPrice } = useWRNInfo();
@@ -45,7 +45,7 @@ function WRNBanner(props) {
                 alt=""
                 onClick={() => {
                   window.open(
-                    "https://etherscan.io/token/0x6a76fe028056717703f357d1d073b439e4d24b0e",
+                    `https://testnet.bscscan.com/token/${WRN_ADDRESS}`,
                     "_blank"
                   );
                 }}
