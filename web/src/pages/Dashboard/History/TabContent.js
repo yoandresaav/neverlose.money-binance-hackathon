@@ -15,7 +15,7 @@ function TabContent({ symbol }) {
     <div className="tab-content col">
       {symbol === "WBNB" && <Swap symbol={symbol} />}
       {symbol !== "WBNB" && (
-        <div className="swap-interface top-40 white">
+        <div className="swap-interface faucet top-40 white">
           Receive test {symbol} from{" "}
           <a
             href="https://testnet.binance.org/faucet-smart"

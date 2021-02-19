@@ -4,6 +4,10 @@
   padding: 2.5rem;
   transition: all 150ms ease-in-out;
 
+  &.faucet {
+    padding: 1rem 2.5rem;
+  }
+
   .collapsed-title {
     padding-right: 20px;
   }

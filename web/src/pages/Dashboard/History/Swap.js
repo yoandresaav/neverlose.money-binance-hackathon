@@ -307,7 +307,7 @@ const TEXT_MAP = {
     collapsedTitle: "Swap your BNB to WBNB first!",
     description:
       "The generated WRN tokens are allocated in the following way: 50% to WBNB, 25% to BTCB, and 25% to ETH asset pool.",
-    link: "https://token.hunt.town",
+    link: "https://hunt-docs.gitbook.io/neverlose-money-bsc/faq#how-are-wrn-tokens-distributed",
     buttonText: "Swap",
   },
 };
