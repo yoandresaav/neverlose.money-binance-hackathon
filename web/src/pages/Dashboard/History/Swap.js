@@ -207,7 +207,7 @@ function Swap({ symbol = "HUNT" }) {
                     )}
                   </div>
                   <p className="light-grey">
-                    {inverse[symbol] ? "ETH" : symbol}
+                    {inverse[symbol] ? "BNB" : symbol}
                   </p>
                 </div>
                 <div
