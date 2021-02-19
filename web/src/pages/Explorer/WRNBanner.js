@@ -68,7 +68,7 @@ function WRNBanner(props) {
               className="left-15"
               onClick={async () => {
                 const symbol = "WRN";
-                const address = ADDRESSES[1][symbol];
+                const address = ADDRESSES[97][symbol];
                 const decimals = DECIMALS[symbol];
                 const image = IMAGES[symbol];
 
