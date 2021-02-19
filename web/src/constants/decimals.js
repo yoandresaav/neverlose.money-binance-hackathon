@@ -6,5 +6,5 @@ export default {
   ETH: 18,
   WBNB: 18,
   BNB: 18,
-  BTCB: 18
+  BTCB: 8
 };
