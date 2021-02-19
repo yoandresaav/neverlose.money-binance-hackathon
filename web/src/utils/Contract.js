@@ -4,9 +4,22 @@ import { getAddress } from "@ethersproject/address";
 import { BigNumber } from "@ethersproject/bignumber";
 import ADDRESSES from "constants/addresses";
 import { allowedChainId } from "utils/chainId";
-import Web3 from 'web3';
+import Web3 from "web3";
+import random from "lodash/random";
 
-export const HTTP_PROVIDER = "https://data-seed-prebsc-1-s2.binance.org:8545";
+// Array of available nodes to connect to
+const nodes = [
+  "https://data-seed-prebsc-2-s1.binance.org:8545",
+  "https://data-seed-prebsc-1-s2.binance.org:8545",
+  "https://data-seed-prebsc-2-s2.binance.org:8545",
+  "https://data-seed-prebsc-1-s3.binance.org:8545",
+  "https://data-seed-prebsc-2-s3.binance.org:8545",
+];
+
+function getRpc() {
+  const randomIndex = random(0, nodes.length - 1);
+  return nodes[randomIndex];
+}
 
 export function isAddress(value) {
   try {
@@ -19,7 +32,7 @@ export function isAddress(value) {
 export function getEthersProvider(chainId) {
   if (!allowedChainId(chainId) || !chainId) return null;
 
-  const web3 = new Web3(HTTP_PROVIDER);
+  const web3 = new Web3(getRpc());
 
   return web3;
 }
