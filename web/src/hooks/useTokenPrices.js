@@ -26,7 +26,7 @@ function useTokenPrices() {
           HUNT: hunt,
           ETH: weth,
           BTCB: wbtc,
-          BNB: bnb,
+          WBNB: bnb,
         };
         setData(_prices);
         callingAPI.current = false;

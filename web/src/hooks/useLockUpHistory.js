@@ -61,9 +61,9 @@ function useLockUpHistory(symbol) {
 
             let coinID = "hunt-token";
 
-            if (symbol === "WBTC") {
+            if (symbol === "BTCB") {
               coinID = "wrapped-bitcoin";
-            } else if (symbol === "WETH") {
+            } else if (symbol === "ETH") {
               coinID = "weth";
             }
 
@@ -77,6 +77,7 @@ function useLockUpHistory(symbol) {
               if (!startPrice) {
                 const resp = await fetch(apiURL);
                 const json = await resp.json();
+                json.prices["BTCB"] = json.prices["BTC"];
                 const _startPrice = json.prices[symbol.replace("W", "")];
                 startPrice = _startPrice;
                 window.localStorage.setItem(storageKey, _startPrice);
