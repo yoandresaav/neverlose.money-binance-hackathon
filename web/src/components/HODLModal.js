@@ -3,7 +3,7 @@ import Modal from "components/Modal";
 import ProgressBar from "components/ProgressBar";
 import btcColored from "assets/images/btc-colored.svg";
 import ethColored from "assets/images/eth-colored.svg";
-import huntColored from "assets/images/hunt-colored.svg";
+import bnbLogo from "assets/images/bnb-logo.svg";
 import { Line } from "react-chartjs-2";
 import { handleErrorMessage } from "utils/errors";
 import { useRecoilState } from "recoil";
@@ -49,7 +49,7 @@ function HODLModal() {
   }, [durationInMonths]);
 
   let src = btcColored;
-  let color = "#f7b500";
+  let color = "rgba(247, 147, 26, 1.00)";
   let coinToFetch = "bitcoin";
   let modalMessage = null;
   let daysPassed,
@@ -80,14 +80,14 @@ function HODLModal() {
     daysPassed = Math.floor(daysDiff / 1000 / 86400);
     percentComplete = daysDiff / (durationInMonths * 30 * 86400 * 1000);
 
-    if (symbol === "WETH") {
+    if (symbol === "ETH") {
       src = ethColored;
       color = "#0091ff";
       coinToFetch = "ethereum";
-    } else if (symbol === "HUNT") {
-      src = huntColored;
-      color = "#fc6f6f";
-      coinToFetch = "hunt-token";
+    } else if (symbol === "WBNB") {
+      src = bnbLogo;
+      color = "#f0b90b";
+      coinToFetch = "binancecoin";
     }
 
     modalMessage = (
