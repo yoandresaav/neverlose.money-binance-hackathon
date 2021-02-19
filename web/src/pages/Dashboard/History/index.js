@@ -8,12 +8,12 @@ import useDashboard from "hooks/useDashboard";
 function History(props) {
   const [tabIndex] = useRecoilState(tabIndexAtom);
 
-  let symbol = "ETH";
+  let symbol = "BNB";
 
   if (tabIndex === 1) {
     symbol = "BTCB";
   } else if (tabIndex === 2) {
-    symbol = "BNB";
+    symbol = "ETH";
   }
 
   global.dashboard = useDashboard(symbol);
