@@ -11,6 +11,7 @@
     "@ethersproject/constants": "^5.0.5",
     "@ethersproject/contracts": "^5.0.5",
     "@ethersproject/providers": "^5.0.10",
+    "@pancakeswap-libs/sdk": "^1.0.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
