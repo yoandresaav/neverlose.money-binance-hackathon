@@ -12,5 +12,5 @@ truffle run verify ERC20Token@0xe888dF124ed4f0087aBE673Be48F538072c48565 --netwo
 # -> WRN: 0xDD42F573125b920b25769B903D4d2C831BD46340
 
 # Step 3: Connect
-# Connect the proxy contract to the implementation contract on Etherscan interface:
+# Connect the proxy contract to the implementation contract on BscScan interface:
 # (Contract -> More Options -> Is this a proxy?)

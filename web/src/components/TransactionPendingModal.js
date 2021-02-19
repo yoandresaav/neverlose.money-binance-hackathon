@@ -29,7 +29,7 @@ function TransactionPendingModal({ symbol }) {
           rel="noopener noreferrer"
         >
           <button className="top-100 big max-width" onClick={() => {}}>
-            View on Etherscan
+            View on BscScan
           </button>
         </a>
       </div>
