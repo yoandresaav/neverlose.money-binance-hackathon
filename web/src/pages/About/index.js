@@ -22,7 +22,7 @@ function Home(props) {
         <a
           className="row align-center top-20"
           target="_blank"
-          href="https://www.youtube.com/watch?v=L4YjWxJHZpw"
+          href="https://www.youtube.com/watch?v=hQUYS0PFNqI&ab_channel=HUNTPlatform"
           rel="noopener noreferrer"
         >
           <h6 className="primary">Watch the film</h6>
