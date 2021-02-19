@@ -15,6 +15,7 @@ import { hodlModal } from "atoms";
 import { useRecoilState } from "recoil";
 import ETHERSCAN from "constants/etherscan";
 import DollarValue from "components/DollarValue";
+import { CHAIN_ID_BSC_TESTNET } from "utils/chainId";
 
 //address indexed token, address indexed account, uint256 amount, uint256 refundAmount, uint256 penalty, uint256 fee, uint256 remainingTotal
 
@@ -102,7 +103,7 @@ function TransactionCard(props) {
     ${(isUnlocked || event === "BonusClaimed" || event === "WRNClaimed") &&
       "claimed"} `}
         onClick={() => {
-          const txLink = `${ETHERSCAN[1]}/tx/${transactionHash}`;
+          const txLink = `${ETHERSCAN[CHAIN_ID_BSC_TESTNET]}/tx/${transactionHash}`;
 
           if (event !== "LockedUp") {
             window.open(txLink, "_blank");
