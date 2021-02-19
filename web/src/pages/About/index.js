@@ -65,7 +65,7 @@ function Home(props) {
                 href="https://hunt-docs.gitbook.io/neverlose-money-bsc/faq#can-i-withdraw-my-asset-within-the-lock-up-period-and-what-is-the-penalty-and-platform-fee"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="link"
+                className="underlined-link"
               >
                 HUNT burning system.
               </a>

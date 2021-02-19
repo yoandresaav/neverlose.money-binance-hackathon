@@ -24,6 +24,11 @@ body {
   cursor: pointer;
 }
 
+.underlined-link {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 @for $i from 1 through 20 {
   .top-#{$i * 5} {
     margin-top: #{$i * 0.3}rem;
@@ -98,9 +103,4 @@ body {
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
-}
-
-.link {
-  text-decoration: underline;
-  cursor: pointer;
 }
