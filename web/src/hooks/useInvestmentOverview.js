@@ -45,42 +45,42 @@ function useInvestmentOverview() {
           ethBonus,
           ethTotal,
           ethBonusClaimed,
-        ] = await getValues(ADDRESSES[chainId]?.WETH);
+        ] = await getValues(ADDRESSES[chainId]?.ETH);
         const [
           btcStaked,
           btcBonus,
           btcTotal,
           btcBonusClaimed,
-        ] = await getValues(ADDRESSES[chainId]?.WBTC);
+        ] = await getValues(ADDRESSES[chainId]?.BTCB);
         const [
           huntStaked,
           huntBonus,
           huntTotal,
           huntBonusClaimed,
-        ] = await getValues(ADDRESSES[chainId]?.HUNT);
+        ] = await getValues(ADDRESSES[chainId]?.WBNB);
 
         const totalInvested = {
-          WETH: ethStaked.dividedBy(Math.pow(10, DECIMALS.WETH)),
-          WBTC: btcStaked.dividedBy(Math.pow(10, DECIMALS.WBTC)),
-          HUNT: huntStaked.dividedBy(Math.pow(10, DECIMALS.HUNT)),
+          ETH: ethStaked.dividedBy(Math.pow(10, DECIMALS.ETH)),
+          BTCB: btcStaked.dividedBy(Math.pow(10, DECIMALS.BTCB)),
+          WBNB: huntStaked.dividedBy(Math.pow(10, DECIMALS.WBNB)),
         };
 
         const totalBonus = {
-          WETH: ethBonus
+          ETH: ethBonus
             .plus(ethBonusClaimed)
-            .dividedBy(Math.pow(10, DECIMALS.WETH)),
-          WBTC: btcBonus
+            .dividedBy(Math.pow(10, DECIMALS.ETH)),
+          BTCB: btcBonus
             .plus(btcBonusClaimed)
-            .dividedBy(Math.pow(10, DECIMALS.WBTC)),
-          HUNT: huntBonus
+            .dividedBy(Math.pow(10, DECIMALS.BTCB)),
+          WBNB: huntBonus
             .plus(huntBonusClaimed)
-            .dividedBy(Math.pow(10, DECIMALS.HUNT)),
+            .dividedBy(Math.pow(10, DECIMALS.WBNB)),
         };
 
         const cumulative = {
-          WETH: ethTotal.dividedBy(Math.pow(10, DECIMALS.WETH)),
-          WBTC: btcTotal.dividedBy(Math.pow(10, DECIMALS.WBTC)),
-          HUNT: huntTotal.dividedBy(Math.pow(10, DECIMALS.HUNT)),
+          ETH: ethTotal.dividedBy(Math.pow(10, DECIMALS.ETH)),
+          BTCB: btcTotal.dividedBy(Math.pow(10, DECIMALS.BTCB)),
+          WBNB: huntTotal.dividedBy(Math.pow(10, DECIMALS.WBNB)),
         };
 
         setData([totalInvested, totalBonus, cumulative]);

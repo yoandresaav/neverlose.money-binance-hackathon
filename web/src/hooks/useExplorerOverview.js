@@ -14,7 +14,7 @@ function useExplorerOverview() {
   const [chainData, setChainData] = useState(null);
   const [renderData, setRenderData] = useState([]);
   const { type, timestamp } = useRecoilValue(txTimestampAtom);
-  const { WETH, WBTC, HUNT } = global.tokenPrices || {};
+  const { ETH, BTCB, WBNB } = global.tokenPrices || {};
   const { lastUpdateTimestamp } = global.events;
 
   useEffect(() => {
@@ -60,59 +60,59 @@ function useExplorerOverview() {
         type === TX_TYPE_EXIT ||
         type === TX_TYPE_LOCKUP
       ) {
-        const weth = await getValues(ADDRESSES[chainId]?.WETH, "WETH");
-        const wbtc = await getValues(ADDRESSES[chainId]?.WBTC, "WBTC");
-        const hunt = await getValues(ADDRESSES[chainId]?.HUNT, "HUNT");
+        const wbnb = await getValues(ADDRESSES[chainId]?.WBNB, "WBNB");
+        const btcb = await getValues(ADDRESSES[chainId]?.BTCB, "BTCB");
+        const eth = await getValues(ADDRESSES[chainId]?.ETH, "ETH");
 
-        setChainData([weth, wbtc, hunt]);
+        setChainData([wbnb, btcb, eth]);
       }
     })();
   }, [rewardPool, type, timestamp, chainId, lastUpdateTimestamp]); //eslint-disable-line
 
   useEffect(() => {
-    if (chainData && WETH && WBTC && HUNT) {
-      const [weth, wbtc, hunt] = chainData;
+    if (chainData && ETH && BTCB && WBNB) {
+      const [wbnb, btcb, eth] = chainData;
       const [
-        wethPenalty,
-        wethActive,
-        wethAcc,
-        wethEffectiveTotal,
-        wethLockUpCount,
-        wethBrokenCount,
-      ] = weth;
+        wbnbPenalty,
+        wbnbActive,
+        wbnbAcc,
+        wbnbEffectiveTotal,
+        wbnbLockUpCount,
+        wbnbBrokenCount,
+      ] = wbnb;
       const [
-        wbtcPenalty,
-        wbtcActive,
-        wbtcAcc,
-        wbtcEffectiveTotal,
-        wbtcLockUpCount,
-        wbtcBrokenCount,
-      ] = wbtc;
+        btcbPenalty,
+        btcbActive,
+        btcbAcc,
+        btcbEffectiveTotal,
+        btcbLockUpCount,
+        btcbBrokenCount,
+      ] = btcb;
       const [
-        huntPenalty,
-        huntActive,
-        huntAcc,
-        huntEffectiveTotal,
-        huntLockUpCount,
-        huntBrokenCount,
-      ] = hunt;
+        ethPenalty,
+        ethActive,
+        ethAcc,
+        ethEffectiveTotal,
+        ethLockUpCount,
+        ethBrokenCount,
+      ] = eth;
       const penalties = [
-        wethPenalty * WETH,
-        wbtcPenalty * WBTC,
-        huntPenalty * HUNT,
+        wbnbPenalty * WBNB,
+        btcbPenalty * BTCB,
+        ethPenalty * ETH,
       ];
 
       const totalPenalty = penalties.reduce((a, b) => a + b, 0);
 
       const activeLockUps = [
-        wethActive * WETH,
-        wbtcActive * WBTC,
-        huntActive * HUNT,
+        wbnbActive * WBNB,
+        btcbActive * BTCB,
+        ethActive * ETH,
       ];
 
       const totalActiveLockUp = activeLockUps.reduce((a, b) => a + b, 0);
 
-      const accLockUps = [wethAcc * WETH, wbtcAcc * WBTC, huntAcc * HUNT];
+      const accLockUps = [wbnbAcc * WBNB, btcbAcc * BTCB, ethAcc * ETH];
 
       const totalAccLockUp = accLockUps.reduce((a, b) => a + b, 0);
 
@@ -127,13 +127,13 @@ function useExplorerOverview() {
       ];
 
       const effectiveTotal = [
-        wethEffectiveTotal,
-        wbtcEffectiveTotal,
-        huntEffectiveTotal,
+        wbnbEffectiveTotal,
+        btcbEffectiveTotal,
+        ethEffectiveTotal,
       ];
 
-      const lockUpCounts = [wethLockUpCount, wbtcLockUpCount, huntLockUpCount];
-      const brokenCounts = [wethBrokenCount, wbtcBrokenCount, huntBrokenCount];
+      const lockUpCounts = [wbnbLockUpCount, btcbLockUpCount, ethLockUpCount];
+      const brokenCounts = [wbnbBrokenCount, btcbBrokenCount, ethBrokenCount];
 
       setRenderData([
         penalties,
@@ -149,7 +149,7 @@ function useExplorerOverview() {
         brokenCounts,
       ]);
     }
-  }, [chainData, WETH, WBTC, HUNT]);
+  }, [chainData, WBNB, BTCB, ETH]);
 
   return renderData;
 }
