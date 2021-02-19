@@ -8,7 +8,7 @@ import ClaimBonus from "./ClaimBonus";
 import ClaimBoth from "./ClaimBoth";
 import ClaimWRN from "./ClaimWRN";
 import LockUpInformation from "./LockUpInformation";
-import AddToMetamask from "./AddToMetamask";
+// import AddToMetamask from "./AddToMetamask";
 
 function TabContent({ symbol }) {
   return (
@@ -20,7 +20,7 @@ function TabContent({ symbol }) {
           <LockUpInformation symbol={symbol} />
 
           <div className="col justify-between">
-            <AddToMetamask symbol={symbol} />
+            {/*<AddToMetamask symbol={symbol} />*/}
             <div className="claim-items grow row">
               <ClaimBonus symbol={symbol} />
               <ClaimWRN symbol={symbol} />

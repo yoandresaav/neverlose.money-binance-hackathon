@@ -2,6 +2,7 @@
   .wallet-item {
     padding: 20px 30px;
     border: solid 1px #0091ff;
+
     .wallet-logo {
       width: auto;
       height: 30px;
@@ -11,6 +12,11 @@
     &.connected {
       border-color: #05b169;
       background-color: #05b169;
+    }
+
+    &.disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
     }
   }
 

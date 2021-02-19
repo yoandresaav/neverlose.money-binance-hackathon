@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import Modal from "components/Modal";
 import wrnBlueBlack from "assets/images/warren-blue-black.svg";
 import metamaskLogo from "assets/images/metamask-logo.svg";
-import coinbaseLogo from "assets/images/coinbase-logo.svg";
 import ledgerLogo from "assets/images/ledger-logo.svg";
 import walletconnectLogo from "assets/images/walletconnect-logo.svg";
 import bWallet from "assets/images/b-wallet.svg";
@@ -20,11 +19,11 @@ import {
 import { useWeb3React } from "@web3-react/core";
 import useWeb3 from "hooks/useWeb3";
 
-function WalletItem({ className, icon, title, onClick, connected }) {
+function WalletItem({ className, icon, title, onClick, connected, disabled }) {
   return (
     <div
       className={`wallet-item link max-width row align-center justify-between ${connected &&
-        "connected"} ${className}`}
+        "connected"} ${className} ${disabled === "disabled" && "disabled"}`}
       onClick={onClick}
     >
       <div className="row align-center">
@@ -95,17 +94,11 @@ function ConnectWallet(props) {
             />
             <WalletItem
               className="top-15"
-              icon={coinbaseLogo}
-              title="Coinbase Wallet"
-              onClick={() => activate(walletlink)}
-              connected={connected && connector === walletlink}
-            />
-            <WalletItem
-              className="top-15"
               icon={ledgerLogo}
               title="Ledger"
               onClick={() => activate(ledger)}
               connected={connected && connector === ledger}
+              disabled="disabled"
             />
             <WalletItem
               className="top-15"
@@ -113,6 +106,7 @@ function ConnectWallet(props) {
               title="Wallet Connect"
               onClick={() => activate(walletconnect)}
               connected={connected && connector === walletconnect}
+              disabled="disabled"
             />
           </div>
         </div>
