@@ -12,27 +12,11 @@ function Footer(props) {
         <img className="footer-logo" src={logo} alt="" />
         <div className="link-icons row">
           <a
-            href="https://github.com/Steemhunt/neverlose.money-contract"
+            href="https://github.com/Steemhunt/neverlose.money-binance-hackathon"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src={githubGrey} alt="" />
-          </a>
-
-          <a
-            href="https://discord.gg/ywBqD74"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img className="left-20" src={discordGrey} alt="" />
-          </a>
-
-          <a
-            href="https://t.me/steemhunt"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img className="left-20" src={telegramGrey} alt="" />
           </a>
 
           <a
@@ -48,32 +32,14 @@ function Footer(props) {
       <div className="warning left-40">
         <div className="grey">
           Neverlose.money is a web user interface using a smart contract
-          protocol. Even though the smart contract is{" "}
-          <a
-            className="underline"
-            href="https://github.com/Steemhunt/neverlose.money-contract/tree/main/audits"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            audited
-          </a>{" "}
-          and thoroughly unit tested, you may still encounter an unexpected
-          issue. Please do your own research before you interact with the
-          protocol and use it at your own{" "}
-          <a
-            href="https://docs.neverlose.money/getting-started/faq#is-neverlose-money-safe-has-it-been-audited"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline"
-          >
-            risk
-          </a>
-          . We are not liable for any financial loss.
+          protocol. You may encounter an unexpected issue.
+          Please do your own research before you interact with the
+          protocol and use it at your own risk. We are not liable for any financial loss.
         </div>
         <div className="link-icons top-20">
           <a
             className="top-15"
-            href="https://docs.neverlose.money/getting-started/faq"
+            href="https://hunt-docs.gitbook.io/neverlose-money-bsc/faq"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -81,19 +47,11 @@ function Footer(props) {
           </a>
           <a
             className="top-15"
-            href="https://docs.neverlose.money/"
+            href="https://hunt-docs.gitbook.io/neverlose-money-bsc"
             target="_blank"
             rel="noopener noreferrer"
           >
             <button className="left-20">Docs</button>
-          </a>
-          <a
-            className="top-15"
-            href="https://docs.neverlose.money/others/terms-of-service"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className="left-20">Terms</button>
           </a>
         </div>
         <div className="grey top-30">
@@ -103,27 +61,11 @@ function Footer(props) {
 
       <div className="links left-90 col">
         <a
-          href="https://github.com/Steemhunt/neverlose.money-contract"
+          href="https://github.com/Steemhunt/neverlose.money-binance-hackathon"
           target="_blank"
           rel="noopener noreferrer"
         >
           GitHub
-        </a>
-        <a
-          className="top-15"
-          href="https://discord.gg/ywBqD74"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Discord
-        </a>
-        <a
-          className="top-15"
-          href="https://t.me/steemhunt"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Telegram
         </a>
         <a
           className="top-15"
@@ -133,19 +75,11 @@ function Footer(props) {
         >
           Email
         </a>
-        <a
-          className="top-15"
-          href="https://github.com/Steemhunt/neverlose.money-contract/tree/main/audits"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Security Audit
-        </a>
       </div>
 
       <div className="links col left-60">
         <a
-          href="https://docs.neverlose.money/"
+          href="https://hunt-docs.gitbook.io/neverlose-money-bsc"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -153,41 +87,19 @@ function Footer(props) {
         </a>
         <a
           className="top-15"
-          href="https://docs.neverlose.money/getting-started/user-guide"
+          href="https://hunt-docs.gitbook.io/neverlose-money-bsc/user-guide"
           target="_blank"
           rel="noopener noreferrer"
         >
           User Guide{" "}
-          <span role="img" aria-label="british flag">
-            🇬🇧
-          </span>
         </a>
         <a
           className="top-15"
-          href="https://docs.neverlose.money/getting-started/user-guide/user-guide-kr"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          User Guide{" "}
-          <span role="img" aria-label="korean flag">
-            🇰🇷
-          </span>
-        </a>
-        <a
-          className="top-15"
-          href="https://docs.neverlose.money/getting-started/faq"
+          href="https://hunt-docs.gitbook.io/neverlose-money-bsc/faq"
           target="_blank"
           rel="noopener noreferrer"
         >
           FAQ
-        </a>
-        <a
-          className="top-15"
-          href="https://docs.neverlose.money/others/terms-of-service"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Terms
         </a>
       </div>
     </footer>

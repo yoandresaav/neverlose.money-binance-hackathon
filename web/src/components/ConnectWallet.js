@@ -111,18 +111,18 @@ function ConnectWallet(props) {
           </div>
         </div>
 
-        <p className="lighter-grey top-70">
+        {/*<p className="lighter-grey top-70">
           By connecting, you agree to our{" "}
           <a
             className="primary"
-            href="https://docs.neverlose.money/others/terms-of-service"
+            href="https://hunt-docs.gitbook.io/neverlose-money-bsc/others/terms-of-service"
             target="_blank"
             rel="noopener noreferrer"
           >
             Terms
           </a>
           .
-        </p>
+        </p>*/}
         <p className="lighter-grey top-10">
           New to Ethereum?{" "}
           <a

@@ -62,9 +62,10 @@ function Home(props) {
             <p className="grey top-30">
               * An additional 3% will be deducted for the{" "}
               <a
-                href="https://docs.neverlose.money/getting-started/faq#can-i-withdraw-my-asset-within-the-lock-up-period-and-what-is-the-penalty-and-platform-fee"
+                href="https://hunt-docs.gitbook.io/neverlose-money-bsc/faq#can-i-withdraw-my-asset-within-the-lock-up-period-and-what-is-the-penalty-and-platform-fee"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="link"
               >
                 HUNT burning system.
               </a>

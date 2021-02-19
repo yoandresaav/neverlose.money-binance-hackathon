@@ -52,7 +52,7 @@ function WRNBanner(props) {
               />
             </div>
             <a
-              href="https://docs.neverlose.money/getting-started/faq#what-is-warren-wrn-token"
+              href="https://hunt-docs.gitbook.io/neverlose-money-bsc/faq#what-is-warren-wrn-token"
               target="_blank"
               rel="noopener noreferrer"
             >

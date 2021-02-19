@@ -10,7 +10,7 @@ function ClaimBonus({ symbol }) {
     <div className="claim-item bonus centered col right-20">
       <a
         className="claim-info-icon"
-        href="https://docs.neverlose.money/getting-started/faq#how-is-the-bonus-calculated"
+        href="https://hunt-docs.gitbook.io/neverlose-money-bsc/faq#how-is-the-bonus-calculated"
         target="_blank"
         rel="noopener noreferrer"
       >

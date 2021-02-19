@@ -10,7 +10,7 @@ function ClaimWRN({ symbol }) {
     <div className="claim-item centered col">
       <a
         className="claim-info-icon"
-        href="https://docs.neverlose.money/getting-started/faq#what-is-warren-wrn-token"
+        href="https://hunt-docs.gitbook.io/neverlose-money-bsc/faq#what-is-warren-wrn-token"
         target="_blank"
         rel="noopener noreferrer"
       >

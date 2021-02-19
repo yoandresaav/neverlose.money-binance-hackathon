@@ -26,7 +26,7 @@ function AutoClaimBanner(props) {
           The pending bonus and WRN will be automatically claimed whenever you
           lock-up, unlock or break assets in the same pool.{" "}
           <a
-            href="https://docs.neverlose.money/getting-started/faq#pending-bonus-and-wrn-is-suddenly-gone-why"
+            href="https://hunt-docs.gitbook.io/neverlose-money-bsc/faq#pending-bonus-and-wrn-is-suddenly-gone-why"
             target="_blank"
             rel="noopener noreferrer"
           >
