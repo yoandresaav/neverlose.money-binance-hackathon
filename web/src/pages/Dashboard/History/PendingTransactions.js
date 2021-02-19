@@ -19,6 +19,9 @@ function PendingTransactions(props) {
     async function refresh() {
       if (account && library) {
         const web3 = getEthersProvider(chainId);
+        if (!web3) {
+          return;
+        }
 
         const cached = JSON.parse(
           window.localStorage.getItem(`${account}:pending-transactions`) || "[]"
