@@ -271,7 +271,7 @@ function Swap({ symbol = "HUNT" }) {
                   <ClipLoader size={14} color="#fff" />
                 ) : allowance === "0" ? (
                   "Approve"
-                ) : symbol === "WETH" && inverse[symbol] ? (
+                ) : symbol === "WBNB" && inverse[symbol] ? (
                   "Unwrap"
                 ) : (
                   buttonText
@@ -292,7 +292,7 @@ const TEXT_MAP = {
     description:
       "Wrapped ETH (WETH) is a token that represents Ether 1:1 and conforms to the ERC20 token standard. Ether is not an ERC20 token, this is why we need to wrap it first.",
     link: "https://academy.binance.com/en/glossary/wrapped-ether",
-    buttonText: "Wrap",
+    buttonText: "Swap",
   },
   BTCB: {
     title: "Get WBTC to make Bitcoin usable in Ethereum",
@@ -308,7 +308,7 @@ const TEXT_MAP = {
     description:
       "The generated WRN tokens are allocated in the following way: 50% to WBNB, 25% to BTCB, and 25% to ETH asset pool.",
     link: "https://hunt-docs.gitbook.io/neverlose-money-bsc/faq#how-are-wrn-tokens-distributed",
-    buttonText: "Swap",
+    buttonText: "Wrap",
   },
 };
 
