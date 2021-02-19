@@ -15,10 +15,10 @@ function TabHeader(props) {
   const id = props?.match?.params?.id;
 
   useEffect(() => {
-    if (id === "bnb") setTabIndex(0);
+    if (id === "wbnb") setTabIndex(0);
     else if (id === "btcb") setTabIndex(1);
     else if (id === "eth") setTabIndex(2);
-    else props.history.push("/dashboard/bnb");
+    else props.history.push("/dashboard/wbnb");
   }, [id]); //eslint-disable-line
 
   return (
@@ -29,7 +29,7 @@ function TabHeader(props) {
       />
       <Link to="/dashboard/bnb" className="history-tab centered">
         <img src={bnbLogo} alt="" />
-        <h6 className="left-5">BNB</h6>
+        <h6 className="left-5">WBNB</h6>
       </Link>
       <Link to="/dashboard/btcb" className="history-tab centered">
         <img src={wbtcBlue} alt="" />

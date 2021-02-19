@@ -8,7 +8,7 @@ import useDashboard from "hooks/useDashboard";
 function History(props) {
   const [tabIndex] = useRecoilState(tabIndexAtom);
 
-  let symbol = "BNB";
+  let symbol = "WBNB";
 
   if (tabIndex === 1) {
     symbol = "BTCB";

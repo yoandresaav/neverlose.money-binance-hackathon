@@ -23,9 +23,9 @@ import { handleErrorMessage } from "utils/errors";
 function Swap({ symbol = "HUNT" }) {
   const { chainId } = useWeb3React();
   const [inverse, setInverse] = useState({
-    WETH: false,
-    WBTC: false,
-    HUNT: false,
+    ETH: false,
+    BTCB: false,
+    WBNB: false,
   });
   const [inputBalance, setInputBalance] = useState(null);
   const [collapsed, setCollapsed] = useState(
@@ -153,7 +153,7 @@ function Swap({ symbol = "HUNT" }) {
                     }
                   />
                   <p className="light-grey">
-                    {inverse[symbol] ? symbol : "ETH"}
+                    {inverse[symbol] ? symbol : "BNB"}
                   </p>
                 </div>
                 <div className="font-10 top-5 row">
@@ -298,7 +298,7 @@ function Swap({ symbol = "HUNT" }) {
 }
 
 const TEXT_MAP = {
-  WETH: {
+  ETH: {
     title: "Wrap your Ether first!",
     collapsedTitle: "Wrap your Ether first!",
     description:
@@ -306,7 +306,7 @@ const TEXT_MAP = {
     link: "https://academy.binance.com/en/glossary/wrapped-ether",
     buttonText: "Wrap",
   },
-  WBTC: {
+  BTCB: {
     title: "Get WBTC to make Bitcoin usable in Ethereum",
     collapsedTitle: "Wrap your Bitcoin first!",
     description:
@@ -314,11 +314,11 @@ const TEXT_MAP = {
     link: "https://wbtc.network/",
     buttonText: "Swap",
   },
-  HUNT: {
-    title: "Earn x2 WRN tokens via HUNT lock-ups",
-    collapsedTitle: "Swap your ETH to HUNT first!",
+  WBNB: {
+    title: "Earn x2 WRN tokens via WBNB lock-ups",
+    collapsedTitle: "Swap your BNB to WBNB first!",
     description:
-      "The generated WRN tokens are allocated in the following way: 50% to HUNT, 25% to WETH, and 25% to WBTC asset pool.",
+      "The generated WRN tokens are allocated in the following way: 50% to WBNB, 25% to BTCB, and 25% to ETH asset pool.",
     link: "https://token.hunt.town",
     buttonText: "Swap",
   },

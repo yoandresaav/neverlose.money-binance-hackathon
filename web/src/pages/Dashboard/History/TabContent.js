@@ -3,7 +3,7 @@ import HistoryTable from "./HistoryTable";
 import ApproveModal from "./ApproveModal";
 import LockUpModal from "./LockUpModal";
 import AutoClaimBanner from "./AutoClaimBanner";
-// import Swap from "./Swap";
+import Swap from "./Swap";
 import ClaimBonus from "./ClaimBonus";
 import ClaimBoth from "./ClaimBoth";
 import ClaimWRN from "./ClaimWRN";
@@ -13,7 +13,7 @@ import LockUpInformation from "./LockUpInformation";
 function TabContent({ symbol }) {
   return (
     <div className="tab-content col">
-      {/* <Swap symbol={symbol} /> */}
+      <Swap symbol={symbol} />
 
       <div className="row justify-between wrap">
         <div className="lockup max-width top-40 row justify-between">

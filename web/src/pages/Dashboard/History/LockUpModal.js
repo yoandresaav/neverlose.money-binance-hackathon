@@ -183,6 +183,8 @@ function LockUpModal({ symbol }) {
               })
             );
 
+            console.log(lockAmount)
+
             const hex = `0x${new BigNumber(lockAmount)
               .times(Math.pow(10, DECIMALS[symbol]))
               .toString(16)}`;

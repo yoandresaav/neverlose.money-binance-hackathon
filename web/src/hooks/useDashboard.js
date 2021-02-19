@@ -15,7 +15,7 @@ function useDashboard(symbol) {
   const [data, setData] = useState({
     ETH: {},
     BTCB: {},
-    BNB: {},
+    WBNB: {},
   });
   const token = useERC20Token(symbol);
 
@@ -30,20 +30,10 @@ function useDashboard(symbol) {
           };
         });
 
-        //         console.log("lockups", ADDRESSES[chainId]?.[symbol], account);
-        //
-                // call(rewardPool, ADDRESSES[chainId]?.[symbol], account);
-
         const bn = await rewardPool.userLockUps(
           ADDRESSES[chainId]?.[symbol],
           account
         );
-
-//         console.log("bn", bn);
-// 
-//         const result = await bn.call();
-// 
-//         console.log(result);
 
         const [
           total,

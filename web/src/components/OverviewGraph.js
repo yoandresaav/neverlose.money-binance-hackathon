@@ -9,7 +9,7 @@ function OverviewGraph({ data, total, format = "$0,0.00" }) {
   return (
     <div className="overview-graph top-30">
       <div className="row align-center">
-        <img className="graph-icon" src={ethBlue} alt="" />
+        <img className="graph-icon" src={bnbLogo} alt="" />
         <div className="row align-center wrap left-10 max-width">
           <div
             className="bar right-10"
@@ -33,7 +33,7 @@ function OverviewGraph({ data, total, format = "$0,0.00" }) {
         </div>
       </div>
       <div className="row align-center top-5">
-        <img className="graph-icon" src={bnbLogo} alt="" />
+        <img className="graph-icon" src={ethBlue} alt="" />
         <div className="row align-center wrap left-10 max-width">
           <div
             className="bar right-10"

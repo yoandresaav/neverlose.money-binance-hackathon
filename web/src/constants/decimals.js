@@ -4,6 +4,7 @@ export default {
   HUNT: 18,
   WRN: 18,
   ETH: 18,
+  WBNB: 18,
   BNB: 18,
   BTCB: 18
 };

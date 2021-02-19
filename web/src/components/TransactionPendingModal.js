@@ -16,7 +16,7 @@ function TransactionPendingModal({ symbol }) {
     <Modal visible={tx} onClose={onClose} style={{ zIndex: 99999 }}>
       <div className="col grow centered text-center">
         <div style={{ marginTop: 100 }}>
-          <ClockLoader size={70} color={"#0091ff"} loading={true} />
+          <ClockLoader size={70} color={"#f0b90b"} loading={true} />
         </div>
         <div className="font-32 top-60">Transaction pending...</div>
         <p className="light-grey top-5 bottom-70">

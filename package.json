@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@pancakeswap-libs/sdk": "^1.0.1"
+  }
+}

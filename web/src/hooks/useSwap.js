@@ -11,11 +11,11 @@ import {
   Route,
   TokenAmount,
   TradeType,
-} from "@uniswap/sdk";
+} from "@pancakeswap-libs/sdk";
 import { useWeb3React } from "@web3-react/core";
 import { useRouterContract, useERC20Token, useWETH } from "hooks/useContract";
 import isZero from "utils/isZero";
-import { calculateGasMargin } from "utils/Contract";
+import { calculateGasMargin, getEthersProvider } from "utils/Contract";
 import { handleErrorMessage } from "utils/errors";
 import { debounce } from "lodash";
 import { useRecoilState } from "recoil";
@@ -28,8 +28,6 @@ import {
 } from "constants/index";
 import numeral from "numeral";
 import { toast } from "react-toastify";
-import Web3WsProvider from "web3-providers-ws";
-import ethers from "ethers";
 
 function toHex(currencyAmount) {
   return `0x${currencyAmount.raw.toString(16)}`;
@@ -47,14 +45,14 @@ function useSwap(symbol, amount, inverse = false) {
   const [, setPendingTx] = useRecoilState(pendingTx);
   const [lastTx, setTxTimestamp] = useRecoilState(txTimestampAtom);
   const [outputAmount, setOutputAmount] = useState({
-    WETH: null,
-    WBTC: null,
-    HUNT: null,
+    ETH: null,
+    BTCB: null,
+    WBNB: null,
   });
   const [swap, setSwap] = useState({
-    WETH: null,
-    WBTC: null,
-    HUNT: null,
+    ETH: null,
+    BTCB: null,
+    WBNB: null,
   });
   const { chainId, library, account } = useWeb3React();
 
@@ -62,9 +60,11 @@ function useSwap(symbol, amount, inverse = false) {
 
   //used for executing contract such as estimateGas and actual swap methods
   const router = useRouterContract(chainId);
+  // console.log(router);
 
   const tokenContract = useERC20Token(symbol);
-  const wethContract = useWETH(WETH[chainId]?.address);
+  // console.log(WETH[chainId]?.address);
+  const wethContract = useWETH("0x094616F0BdFB0b526bD735Bf66Eca0Ad254ca81F");
 
   useEffect(() => {
     (async () => {
@@ -123,7 +123,7 @@ function useSwap(symbol, amount, inverse = false) {
           router.address,
           "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
         );
-        action = "WETH approval";
+        action = "WBNB approval";
       }
       setPendingTx((txArr) =>
         txArr.concat({
@@ -143,7 +143,7 @@ function useSwap(symbol, amount, inverse = false) {
       if (inverse) {
         toast.success(`Successfully approved ${symbol}! 🎉`);
       } else {
-        toast.success(`Successfully approved WETH! 🎉`);
+        toast.success(`Successfully approved WBNB! 🎉`);
       }
     } catch (e) {
       handleErrorMessage(e);
@@ -160,6 +160,7 @@ function useSwap(symbol, amount, inverse = false) {
 
     const value = new BigNumber(ethAmount).times(Math.pow(10, 18)).toString(10);
     const actionTimestamp = new Date().getTime();
+
     try {
       let tx;
 
@@ -173,12 +174,12 @@ function useSwap(symbol, amount, inverse = false) {
 
       let action = `Wrapping ${numeral(ethAmount).format(
         "0,0.00[0000]"
-      )} ETH to WETH`;
+      )} BNB to WBNB`;
 
       if (inverse) {
         action = `Unwrapping ${numeral(ethAmount).format(
           "0,0.00[0000]"
-        )} WETH to ETH`;
+        )} WBNB to BNB`;
       }
 
       setPendingTx((txArr) =>
@@ -200,13 +201,13 @@ function useSwap(symbol, amount, inverse = false) {
         toast.success(
           `Successfully unwrapped ${numeral(ethAmount).format(
             "0,0.00[0000]"
-          )} WETH to ETH! 🎉`
+          )} WBNB to BNB! 🎉`
         );
       } else {
         toast.success(
           `Successfully wrapped ${numeral(ethAmount).format(
             "0,0.00[0000]"
-          )} ETH to WETH! 🎉`
+          )} BNB to WBNB! 🎉`
         );
       }
     } catch (e) {
@@ -222,7 +223,7 @@ function useSwap(symbol, amount, inverse = false) {
   const calculate = async (symbol, amount) => {
     if (!account) return;
 
-    if (symbol === "WETH") {
+    if (symbol === "WBNB") {
       setOutputAmount({ ...outputAmount, [symbol]: amount });
       const _swap = async (onSuccess, onError) =>
         wrap(amount, onSuccess, onError);
@@ -246,9 +247,10 @@ function useSwap(symbol, amount, inverse = false) {
         symbol
       );
 
-      const ws = new Web3WsProvider("wss://bsc-ws-node.nariox.org:443");
+      // const ws = new Web3WsProvider("wss://bsc-ws-node.nariox.org:443");
+      const ws = getEthersProvider(97);
 
-      inputSymbol = "ETH";
+      inputSymbol = "WBNB";
       inputAddress = WETH[chainId].address;
       inputToken = WETH[token.chainId];
 
@@ -263,7 +265,7 @@ function useSwap(symbol, amount, inverse = false) {
         inputAddress = ADDRESSES[chainId]?.[symbol];
         inputToken = token;
 
-        outputSymbol = "ETH";
+        outputSymbol = "BNB";
         outputAddress = WETH[chainId].address;
         outputToken = WETH[token.chainId];
         method = "swapExactTokensForETH";
@@ -272,7 +274,8 @@ function useSwap(symbol, amount, inverse = false) {
       const pair = await Fetcher.fetchPairData(
         outputToken,
         inputToken,
-        new ethers.providers.Web3Provider(ws)
+        ws
+        // new ethers.providers.Web3Provider(ws)
       );
       const route = new Route([pair], inputToken);
 
