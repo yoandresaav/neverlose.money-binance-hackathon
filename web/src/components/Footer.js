@@ -55,7 +55,7 @@ function Footer(props) {
           </a>
         </div>
         <div className="grey top-30">
-          © 2020 Bourbonshake Inc. All Rights Reserved.
+          Made with ❤️ from LA 🇺🇸, Seoul 🇰🇷, and Sligo 🇮🇪
         </div>
       </div>
 
