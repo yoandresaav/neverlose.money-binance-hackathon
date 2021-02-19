@@ -7,9 +7,9 @@ import numeral from "numeral";
 import ReactTooltip from "react-tooltip";
 
 const INITIAL_PRICES = {
-  WBTC: 19269.392,
-  WETH: 585.542,
-  BNB: 29.55
+  BTCB: 19269.392,
+  ETH: 585.542,
+  WBNB: 29.55
 };
 
 function getColor(rate) {
@@ -17,10 +17,10 @@ function getColor(rate) {
 }
 
 function HodlIndex(props) {
-  const { WETH, WBTC, BNB } = global.tokenPrices || {};
-  const btcIncrease = (WBTC - INITIAL_PRICES.WBTC) / INITIAL_PRICES.WBTC;
-  const ethIncrease = (WETH - INITIAL_PRICES.WETH) / INITIAL_PRICES.WETH;
-  const huntIncrease = (BNB - INITIAL_PRICES.BNB) / INITIAL_PRICES.BNB;
+  const { ETH, BTCB, WBNB } = global.tokenPrices || {};
+  const btcIncrease = (BTCB - INITIAL_PRICES.BTCB) / INITIAL_PRICES.BTCB;
+  const ethIncrease = (ETH - INITIAL_PRICES.ETH) / INITIAL_PRICES.ETH;
+  const huntIncrease = (WBNB - INITIAL_PRICES.WBNB) / INITIAL_PRICES.WBNB;
 
   return (
     <div className="stat-card hodl-index centered top-20">
