@@ -27,7 +27,9 @@ function AnimatedNumber({
         initialValue={value}
         formatValue={(val) => {
           if (value === 0) return `0.00${isPercentage ? "%" : ""}`;
-          else if (value <= 1e-6) {
+          else if (format.includes("$")) {
+            return numeral(value).format(format);
+          } else if (value <= 1e-6) {
             return value.toPrecision(3);
           }
 
