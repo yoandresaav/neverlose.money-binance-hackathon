@@ -6,7 +6,6 @@ import { useERC20Token } from "hooks/useContract";
 import ADDRESSES from "constants/addresses";
 import BigNumber from "bignumber.js";
 import DECIMALS from "constants/decimals";
-import { call } from "utils/binance";
 
 function useDashboard(symbol) {
   const { account, chainId } = useWeb3React();
