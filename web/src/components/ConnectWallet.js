@@ -63,7 +63,6 @@ function ConnectWallet(props) {
           <h4 className="top-30">Connect Wallet</h4>
           <div className="top-70 col max-width">
             <WalletItem
-              className="top-15"
               icon={metamaskLogo}
               title={metamaskAvailable ? "Metamask" : "Install Metamask"}
               onClick={() => {
@@ -77,6 +76,7 @@ function ConnectWallet(props) {
               connected={connected && connector === injected}
             />
             <WalletItem
+              className="top-15"
               icon={bWallet}
               title={"Binance Chain Wallet"}
               onClick={() => {
