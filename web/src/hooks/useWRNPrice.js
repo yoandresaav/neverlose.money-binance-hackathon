@@ -21,7 +21,8 @@ function useWRNPrice(props) {
   const chainId = 97;
   const out = useRef(null);
   const { WETH: ETH } = global.tokenPrices || {};
-  const [price, setPrice] = useState(null);
+  // const [price, setPrice] = useState(null);
+  const [price, setPrice] = useState(1);
 
   useEffect(() => {
     async function update() {
