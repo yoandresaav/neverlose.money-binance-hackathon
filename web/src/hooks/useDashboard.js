@@ -22,7 +22,6 @@ function useDashboard(symbol) {
   useEffect(() => {
     (async () => {
       if (rewardPool && symbol && token) {
-        console.log("attempting", token, rewardPool);
         setData((_data) => {
           return {
             ..._data,
@@ -48,7 +47,6 @@ function useDashboard(symbol) {
 
         const d = await rewardPool.tokenStats(ADDRESSES[chainId]?.[symbol]);
 
-        console.log("token stats", d);
         const [, , effectiveTotalLockUp] = d.map((bignum) =>
           new BigNumber(bignum.toString())
             .dividedBy(Math.pow(10, DECIMALS[symbol]))
@@ -85,8 +83,6 @@ function useDashboard(symbol) {
 
         const percentageLocked = effectiveTotal / effectiveTotalLockUp;
         const roi = (bonusClaimed + bonus) / accTotal;
-
-        console.log(allowance);
 
         setData((_data) => {
           return {

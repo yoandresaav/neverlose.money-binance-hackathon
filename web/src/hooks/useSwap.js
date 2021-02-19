@@ -60,10 +60,8 @@ function useSwap(symbol, amount, inverse = false) {
 
   //used for executing contract such as estimateGas and actual swap methods
   const router = useRouterContract(chainId);
-  // console.log(router);
 
   const tokenContract = useERC20Token(symbol);
-  // console.log(WETH[chainId]?.address);
   const wethContract = useWETH("0x094616F0BdFB0b526bD735Bf66Eca0Ad254ca81F");
 
   useEffect(() => {
