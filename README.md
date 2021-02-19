@@ -4,6 +4,10 @@ Neverlose.money is a gamified DeFi protocol on Binance Smart Chain (BSC) that pa
 - 🌐 Site - http://bsc-testnet.neverlose.money
 - 📜 Contract (Testnet) - [0xB84Accc7376171AA6e9a03Bf1Cc9eb76A889Ce1B](https://testnet.bscscan.com/address/0xB84Accc7376171AA6e9a03Bf1Cc9eb76A889Ce1B)
 
+# Protocol Demo Video
+[![Demo Video](https://img.youtube.com/vi/hQUYS0PFNqI/0.jpg)](https://www.youtube.com/watch?v=hQUYS0PFNqI)
+
+
 ## Why HODL Protocol?
 > "If you aren’t willing to own a stock for ten years, don’t even think about owning it for ten minutes."\
 >\- Warren Buffet -
