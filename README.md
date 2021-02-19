@@ -38,12 +38,12 @@ A governance token distribution contract on top of LockUpPool. A maximum of 1.2M
 ## Contract addresses (BSC Testnet)
 - Lock-up contract: [0xB84Accc7376171AA6e9a03Bf1Cc9eb76A889Ce1B](https://testnet.bscscan.com/address/0xB84Accc7376171AA6e9a03Bf1Cc9eb76A889Ce1B)
   - Reward starting block: [6,363,071](https://testnet.bscscan.com/block/countdown/6363071)
-- Warren (WRN) token: [0xDD42F573125b920b25769B903D4d2C831BD46340](https://testnet.bscscan.com/address/0xDD42F573125b920b25769B903D4d2C831BD46340)
+- Warren (WRN) token: [0xDD42F573125b920b25769B903D4d2C831BD46340](https://testnet.bscscan.com/token/0xDD42F573125b920b25769B903D4d2C831BD46340)
 
 ### Test tokens
-- Wrapped BNB: [0x094616F0BdFB0b526bD735Bf66Eca0Ad254ca81F](https://testnet.bscscan.com/address/0x094616F0BdFB0b526bD735Bf66Eca0Ad254ca81F)
-- ETH: [0xd66c6B4F0be8CE5b39D52E0Fd1344c389929B378](https://testnet.bscscan.com/address/0xd66c6B4F0be8CE5b39D52E0Fd1344c389929B378)
-- BTCB: [0x6ce8dA28E2f864420840cF74474eFf5fD80E65B8](https://testnet.bscscan.com/address/0x6ce8dA28E2f864420840cF74474eFf5fD80E65B8)
+- Wrapped BNB: [0x094616F0BdFB0b526bD735Bf66Eca0Ad254ca81F](https://testnet.bscscan.com/token/0x094616F0BdFB0b526bD735Bf66Eca0Ad254ca81F)
+- ETH: [0xd66c6B4F0be8CE5b39D52E0Fd1344c389929B378](https://testnet.bscscan.com/token/0xd66c6B4F0be8CE5b39D52E0Fd1344c389929B378)
+- BTCB: [0x6ce8dA28E2f864420840cF74474eFf5fD80E65B8](https://testnet.bscscan.com/token/0x6ce8dA28E2f864420840cF74474eFf5fD80E65B8)
 
 ## Gas consumption
 ```
