@@ -41,6 +41,9 @@ A governance token distribution contract on top of LockUpPool. A maximum of 1.2M
 - Warren (WRN) token: [0xDD42F573125b920b25769B903D4d2C831BD46340](https://testnet.bscscan.com/token/0xDD42F573125b920b25769B903D4d2C831BD46340)
 
 ### Test tokens
+You can get test tokens for BSC testnet here: https://testnet.binance.org/faucet-smart
+
+Beware that there is a rate limit for each transaction (1 transaction per 2-18 hours depending on the token amount)
 - Wrapped BNB: [0x094616F0BdFB0b526bD735Bf66Eca0Ad254ca81F](https://testnet.bscscan.com/token/0x094616F0BdFB0b526bD735Bf66Eca0Ad254ca81F)
 - ETH: [0xd66c6B4F0be8CE5b39D52E0Fd1344c389929B378](https://testnet.bscscan.com/token/0xd66c6B4F0be8CE5b39D52E0Fd1344c389929B378)
 - BTCB: [0x6ce8dA28E2f864420840cF74474eFf5fD80E65B8](https://testnet.bscscan.com/token/0x6ce8dA28E2f864420840cF74474eFf5fD80E65B8)
